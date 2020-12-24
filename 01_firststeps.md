@@ -333,7 +333,7 @@ You will recognise the contents of *sketch.js*.
 
 ![screenshot of the button to open the files pane in the web editor](img/p5js_filespane.png)
 
-You can actually see (and edit) all 3 files (not the libary) in the editor as well by clicking the arrow in the top left of the editor pane, next to sketch.js. A sidebar will appear with the three files listed. You can select all three and thus modify them.  
+You can actually see (and edit) all 3 files (not the library) in the editor as well by clicking the arrow in the top left of the editor pane, next to sketch.js. A sidebar will appear with the three files listed. You can select all three and thus modify them.  
 
 ## Move to a desktop Code Editor
 It is time to do some coding in our Code Editor now.
