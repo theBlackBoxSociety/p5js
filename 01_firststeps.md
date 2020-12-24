@@ -349,7 +349,7 @@ Clicking the play button will actually start a local server and open the file in
 Write some functions and watch the changes. 
 
 ## Finding the browser console
-You notice that writing code this way becomes slightly more complex. You depend on the behaviour of your code editor, a package to run a server and a separate browser.  And on top of that, where did our error-spitting console go?
+You will notice that writing code this way becomes slightly more complex. You depend on the behaviour of your code editor, a package to run a server and a separate browser. You need to be sure that you have opened the same files in both your code editor and browser as this is a recurring mistake if things do not seem to be working. And on top of that, where did our error-spitting console go?
 
 Luckily every browser comes with a built-in JavaScript console. It is an essential piece in debugging our programs. The console is opened differently depending on which browser you are using. Here are links on how to open the console in [Firefox](https://developer.mozilla.org/en-US/docs/Tools/Web_Console/Opening_the_Web_Console), [Chrome](https://developers.google.com/web/tools/chrome-devtools/open), [Edge](https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide/console), and [Safari](https://support.apple.com/en-ca/guide/safari/sfri20948/mac). 
 
