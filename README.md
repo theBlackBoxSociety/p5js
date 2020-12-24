@@ -8,14 +8,14 @@ During the summer of 2014, [Lauren McCarthy](http://lauren-mccarthy.com/) and a 
 
 
 ## Contents
-#### [Gear Up](00_requirements.md) • software, a good mindset, inspiration + pointers to additional learning resources
-#### [Quickstart](01_firststeps.md) • getting our hands dirty
-#### [Foundation](02_basics.md) • the most commonly used functions and functionalities
-#### [Advanced Stuff](03_advanced.md) • a step up the learning curve
+### [Gear Up](00_requirements.md) • software, a good mindset, inspiration + pointers to additional learning resources
+### [Quickstart](01_firststeps.md) • getting our hands dirty
+### [Foundation](02_basics.md) • the most commonly used functions and functionalities
+### [Advanced Stuff](03_advanced.md) • a step up the learning curve
 
 
 ## To Do Before Class
 - Watch [this interactive video](http://hello.p5js.org/) from Lauren McCarthy and Daniel Shiffman
 - Read the [p5.js Community Statement](https://p5js.org/community/).
 - Sign up for an account on [the p5js web editor](https://editor.p5js.org/)
-- And optionally check some of the [p5.js examples](https://p5js.org/examples/) to get familiar with what you can do with it.
+- And optionally check some of the [p5.js examples](https://p5js.org/examples/) to get familiar with the possibilities 

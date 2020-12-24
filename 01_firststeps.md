@@ -1,5 +1,6 @@
 <details>
 <summary>Table of Contents - click to expand!</summary>
+
 - [the p5.js web editor](#the-p5js-web-editor)
 - [Your first sketch](#your-first-sketch)
 - [Coordinates](#coordinates)
@@ -12,6 +13,7 @@
 - [Download your work](#download-your-work)
 - [Move to a desktop Code Editor](#move-to-a-desktop-code-editor)
 - [Finding the browser console](#finding-the-browser-console)
+
 </details>
 
 # P5.JS • Quickstart
