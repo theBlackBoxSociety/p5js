@@ -16,7 +16,7 @@ Coding is a type of writing. Like all types of writing, code has specific rules.
 
 It's perfect to start by copying, modifying and merging code examples and ideas from others. Writing Frankencode can be very satisfactory at times! Stitching, possibly unrelated, bits and pieces code together making it achieve, although barely, its function, being prone to errors. Much like Frankenstein's monster. 
 
-However, it is important that you type (and not copy - paste) the code examples during this lesson. Synthax is something that you need to get the hang of. Train that muscle memory.
+However, it is important that you type (and not copy - paste) the code examples during this lesson. Syntax is something that you need to get the hang of. Train that muscle memory.
  
 ## Inspiration
 - [Casey Reas](http://reas.com/) • co-founder of Processing
@@ -30,5 +30,6 @@ However, it is important that you type (and not copy - paste) the code examples 
   
 ## Additional Learning resources:  
 - Check out the [learn page](https://p5js.org/learn/) & the [reference](https://p5js.org/reference/) on the p5.js website for full documentation.
+- a [p5.js cheatsheet](https://livinbits.github.io/p5js-cheatsheet-forartists/)
 - Watch [The Coding Train](https://thecodingtrain.com/beginners/p5js/0.1-trailer.html) and / or  [Kadenze](https://www.kadenze.com/courses/introduction-to-programming-for-the-visual-arts-with-p5-js/info) video tutorials.
 - [Creative Coding Notes](https://creative-coding.decontextualize.com/) from [Allison Parrish](http://www.decontextualize.com/), a poet, programmer and educator at NYU ITP.

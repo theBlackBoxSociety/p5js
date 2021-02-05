@@ -21,7 +21,7 @@ During the summer of 2014, [Lauren McCarthy](http://lauren-mccarthy.com/) and a 
 - Sign up for an account on [the p5js web editor](https://editor.p5js.org/)
 - And optionally check some of the [p5.js examples](https://p5js.org/examples/) to get familiar with the possibilities 
 
- 
+<hr> 
 <sup>For these notes, I have taken major and minor parts from other sources. These are: [Creative Coding
 by Allison Parrish](https://creative-coding.decontextualize.com/), [Getting Started with p5.js book, by Lauren McCarthy, Casey Reas & Ben Fry](https://www.oreilly.com/library/view/make-getting-started/9781457186769/), [Programming For Artists, An introduction to programming for artists by Brannon Dorsey](https://brannondorsey.github.io/ProgrammingForArtists/), [Introduction to p5.js by Johannes Preis](https://medium.com/comsystoreply/introduction-to-p5-js-9a7da09f20aa)
 & [the p5.js website](https://p5js.org/)</sup>

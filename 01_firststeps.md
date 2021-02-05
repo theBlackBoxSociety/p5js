@@ -265,6 +265,9 @@ recap:
 - [`noStroke()`](https://p5js.org/reference/#/p5/noStroke) disables drawing the stroke
 - [`strokeWeight()`](https://p5js.org/reference/#/p5/strokeWeight) sets the width of the stroke used for lines, points, and the border around shapes (in pixels)
 
+extra:
+- With [colorMode](https://p5js.org/reference/#/p5/colorMode) you can change the way a color is described. The default is RGB, but HSB (Hue/Saturation/Brightness) is sometimes very useful.
+
 ## Other shapes
 Here are some other functions that draw shapes. Each of them works a little bit differently from the next, so consult the reference page for information and instructions.
 
@@ -305,7 +308,7 @@ function draw() {
 ```
 The program creates a canvas and starts drawing pink circles at the position of the mouse. When a mouse button is pressed the canvas is erased and you can start allover.
 
-More information about the mouseX, mouseY and the if-block will follow in the second part of this tutorial. But it is no rocket-science to understand their function in the program. Isn't it?
+More information about the mouseX, mouseY and the if-block will follow in the second part of this tutorial. But it is no rocket-science to understand their function in the program. 
 
 Notice also that the background function has moved to the setup function. Can you guess what would happen if it is called from within the draw() function?
 
@@ -353,4 +356,13 @@ You will notice that writing code this way becomes slightly more complex. You de
 
 Luckily every browser comes with a built-in JavaScript console. It is an essential piece in debugging our programs. The console is opened differently depending on which browser you are using. Here are links on how to open the console in [Firefox](https://developer.mozilla.org/en-US/docs/Tools/Web_Console/Opening_the_Web_Console), [Chrome](https://developers.google.com/web/tools/chrome-devtools/open), [Edge](https://docs.microsoft.com/en-us/microsoft-edge/devtools-guide/console), and [Safari](https://support.apple.com/en-ca/guide/safari/sfri20948/mac). 
 
-Try it out with the function `print()`!
+Try it out with the function [`print()`](https://p5js.org/reference/#/p5/print) (or `console.log()`)!
+
+```JavaScript
+print("mouseX: " + mouseX);
+print("mouseY: " + mouseY);
+```
+The text between the quotes ("mouseX: ") is there to dissociate and clarify the different values.
+
+## Exercise 
+Create a self-portrait in p5.js 
