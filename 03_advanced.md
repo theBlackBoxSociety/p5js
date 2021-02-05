@@ -1,6 +1,19 @@
 <details>
 <summary>Table of Contents - click to expand!</summary>
 
+- Transformations
+- scale
+- translate
+- rotate
+- push & pop
+
+- Media
+- images (function preload!!)
+- video (files & camera)
+- sounds (extra library)
+
+- Text & type
+
 - Custom functions / abstractions
 - Buttons & sliders
 - Event functions (?)

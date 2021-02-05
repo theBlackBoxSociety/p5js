@@ -17,27 +17,12 @@
 - loops
 	- while 
 	- for
-
-
 - interaction
 	- mouseposition
 	- mouseclick
 	- touches
 	- key
 	- Event functions
-	
-- Transformations
-	- scale
-	- translate
-	- rotate
-	- push & pop
-
-- Media
-	- images (function preload!!)
-	- video (files & camera)
-	- sounds (extra library)
-
-- Text & type
 </details>
 
 # P5.JS • Foundation: expressions, variables,  conditionals, ...
@@ -85,7 +70,8 @@ function setup() {
   triangle(width/2, 51, width-113, 200, 113, 200);
 }
 ```
-Notice:
+Note:
+
 - Everything happens in the `setup()` function as we don't need to write this over and over. Just once is fine.
 - The 'width' and 'height' variables contain the width and height of the display window as set in the createCanvas() function. If we change the canvas size we don't have to change all the shape drawing functions.
 - `rectMode(CENTER)` is far more handy here than the default `rectMode(DEFAULT`. 
@@ -190,7 +176,34 @@ function draw() {
 }
 ```
 
-#### 9 lines in the wind
+#### A second example
+```JavaScript
+// random dots
+let x, y;  // create two variables x, y for position
+
+function setup() {
+  createCanvas(400, 400);
+  background(0);
+  noStroke();
+}
+
+function draw() {
+  fill(255, 120, 0, 250);
+  x = random(0, width);
+  y = random(0, height);
+  ellipse(x, y, 15, 15);
+  filter(BLUR, 1);
+}
+```
+note:
+
+- `let x, y;` is a shorthand notation for 
+`let x;     
+let y;`
+- As we only need the variables x and y in the function draw loop we could also create them there using var (but let would work as well). 
+- The filter BLUR executes a Gaussian blur, the parameter 1 specifies the intensity of the filter. 
+
+#### back to our 9 lines in the wind
 ```JavaScript
 let xpos = 100;
 let xstep = 25;
@@ -215,47 +228,41 @@ function draw() {
   line(xpos + (xstep * 8)+random(-wind,wind), ypos_top, xpos + (xstep * 8), ypos_bottom);
 }
 ```
+Adding the line `wind = 1 + mouseX/20;` in our draw loop will make the random range restricted from 1 to 20 (400/20) depending on the x position of the mouse.
+
 
 ## Motion
 We have seen that code inside the `draw()` function is called on every program cycle repeatedly and we can set the speed with the `frameRate()` function. 
 
 Well, another power of using variables is we can change them on every cycle. 
 
-Adding the line `wind = 1 + mouseX/20;` in our draw loop will make the random range restricted from 1 to 20 (400/20) depending on the x position of the mouse.
-
-Another example:
-
-#### the expanding void
-
-```JavaScript
-let diam = 5;
-let growth = 1;
+#### our line on the move
+```javaScript
+let xpos = 10;
+let xstep = 25;
+let ypos_top = 20;
+let ypos_bottom = 180;
 
 function setup() {
-  createCanvas(500, 300);
-  frameRate(24);
-  background(180);
-  stroke(0);
-  strokeWeight(5);
-  fill(10);
+  createCanvas(400, 200);
+  background(255);
+  frameRate(5);
 }
 
 function draw() {
-  background(180);
-  ellipse(width/2, height/2, diam, diam);
-  diam += growth;
+  line(xpos, ypos_top, xpos, ypos_bottom);
+  xpos += xstep;
+  filter(BLUR,1);
 }
 ```
 
-When you run this you’ll see a circle grow slowly. The diameter is kept in a variable as well as the step (or step size) by which the circle grows. 
+When you run this you’ll see the line move from left to right. It's position on the x axis is kept in a variable as well as the step (or step size) by which it moves. The draw loop draws the line, and increases the x position diameter by 25.  
 
-The draw loop redraws the background, draws the circle, and increases the diameter by 1. The effect is that the circle grows pixel by pixel (or faster if you raise the growth variable) and finally grows bigger then our window. 
+It would be good if we could prevent the line from moving into infinity. Wouldn't it? With condtionals in the next chapter we can.
 
-It would be good if we could prevent that circle from growing into infinity. Wouldn't it? With condtionals in the next chapter we can.
+Note:
 
-Notice:
-
-- `diam += growth;` is actually a shorthand notation of `diam = diam + growth;`
+- `xpos += xstep;` is actually a shorthand notation of `xpos = xpos + xstep;`
 - Even so is writing `a++` equivalent to `a = a + 1` and writing `a--`  equivalent to `a = a - 1`.
 
 
@@ -287,7 +294,7 @@ if (diam <= 400) {
 
 If you imagine the flow of execution as a trickle of water running down the script, by setting a conditional you’re effectively creating different channels for the stream to follow.
 
-With an if ... else clause, the stream can go one of two ways, either through the block or around. 
+With an **if ... else** clause, the stream can go one of two ways, either through the block or around. 
 
 The most common relational operators are:    
 | Character | Operator |
@@ -306,7 +313,49 @@ In addition you can also use **logic operators** to group conditions:
 |&&| logical AND   |
 |!| logical NOT|
 
-### Lets try a more advanced conditional with 2 tests
+#### our line on the move in a bounded loop
+```javaScript
+let xpos = 10;
+let xstep = 25;
+let ypos_top = 20;
+let ypos_bottom = 180;
+
+function setup() {
+  createCanvas(400, 200);
+  background(255);
+  frameRate(5);
+}
+
+function draw() {
+  line(xpos, ypos_top, xpos, ypos_bottom);
+  filter(BLUR, 0.8);
+  if (xpos > width - 10) {
+    xpos = 10;
+  } else {
+    xpos += xstep;
+  }
+}
+```
+
+Note:
+- As is usually the case, you can do things in more than one way. The following was equally good.
+```javaScript  
+function draw() {
+  line(xpos, ypos_top, xpos, ypos_bottom);
+  filter(BLUR, 0.8);
+  xpos += xstep;
+  if (xpos > width - 10) {
+    xpos = 10;
+  } 
+}
+```
+Thus the else part is not always necessary and can be omitted.
+
+
+But we don’t live in an either-or world and so sometimes just having an if and an else isn’t enough.    
+Then **else if** comes to the rescue.
+
+#### Lets try a more advanced conditional with 2 tests
 ```JavaScript
 // Draw a Random Shape
 let dice;
@@ -331,7 +380,41 @@ function setup() {
   }
 }
 ```
+Note:
 
+- the **else-if** statement combines 2 relational expressions with **&&**    
+So, if the result of the function random given to the variable dice is greater than 0.333 **and** less than 0.666 then draw a rectangle
+
+- Recap. Any **if** statement can have any number of associated **else if** clauses. Even if you have an **else if** clause, you don’t necessarily need to have an **else** clause.
+
+
+And to finish this chapter on conditionals a somewhat classic example
+#### a Bouncing Ball    
+draw an ellipse that moves from left to right. When it reaches the right hand side of the sketch, make it move from right to left. When it reaches the left hand side again, make it move from left to right again.
+
+```javaScript
+let xspeed = 4;
+let xpos = 0;
+let diam = 50;
+
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(50);
+  stroke(255);
+  strokeWeight(8);
+  ellipse(xpos, 200, diam, diam);
+  if (xpos > width-diam/2) {
+    xspeed = -4;
+  }
+  if (xpos < diam/2) {
+    xspeed = 4;
+  }
+  xpos += xspeed;
+}
+```
 
 ## Repetition - The While Loop 
 
@@ -355,7 +438,7 @@ Note that if you don’t include the 'number--' line inside the loop, which subt
 _Flow diagram of a while loop_
 
 
-### Lets draw a line repeatedly as we did before.
+#### Lets draw a line repeatedly as we did before.
 ```javaScript
 // a while loop example of our vertical lines
 let xpos = 80;
@@ -444,7 +527,7 @@ function draw() {
 
 The initial state of the for loop sets a variable h to 10. The code in the loop executes until h <= (height-15) (the end condition). Every time the loop is executed, the value of h increases by 10, according to the step you’ve defined (h += 10). This means the code inside the parentheses of the for loop will execute 28 times, with h set to 10, 20, 30 ... 270, 280. Knowing that the h variable follows this pattern, you can use it in multiple ways. The lines you’re drawing are in 10-pixel steps down the canvas, because you use h for the y value. But the alpha transparency of the lines also varies as h varies: the black line gets lighter, and the white line gets darker.
 
-### Time for some serious Tiling.
+#### Time for Serious Tiling.
 ```JavaScript
 // for loop example
 let diam = 30;
@@ -480,7 +563,7 @@ function draw() {
   }
 }
 ```
-### the GOTO 10 example
+#### the GOTO 10 example
 "goto 10" refers to "10 PRINT CHR$(205.5+RND(1)); : GOTO 10"      
 a random maze generation program in one line of Commodore 64 Basic.
 
