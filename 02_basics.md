@@ -28,7 +28,7 @@
 # P5.JS • Foundation: expressions, variables,  conditionals, ...
 
 In the previous tutorial, we went through the basics of working with p5.js. This tutorial goes over a couple of fundamental concepts of computer programming with expressions (or math), variables, conditionals and loops. We will apply these concepts in working with motion, interaction, visual transformations and working with media (images).     
-But we will start with something that is pointless for the machine but very useful for yourself and potential co-coders, *comments*.
+But we will start with something that is pointless for the machine but, in time, will certainly prove its value to yourself and potential co-coders, *comments*.
 
 ## Comments
 Comments are parts of the program that are ignored when the program is run. They are useful for making notes for yourself that explain what’s happening in the code. If others are reading your code, comments are especially important to help them understand your thought process. Comments are also useful for trying things in your code without loosing the original attempt.
@@ -75,7 +75,7 @@ Note:
 - Everything happens in the `setup()` function as we don't need to write this over and over. Just once is fine.
 - The 'width' and 'height' variables contain the width and height of the display window as set in the createCanvas() function. If we change the canvas size we don't have to change all the shape drawing functions.
 - `rectMode(CENTER)` is far more handy here than the default `rectMode(DEFAULT`. 
-- /2 is actually the same * 0.5
+- /2 is actually the same *0.5
 
 ### Common Mathematical Operators  are:
 | Character | Operator |
@@ -84,7 +84,6 @@ Note:
 | -	| Subtraction |
 | *	| Multiplication |
 | /	| Division |
-| ^	| Exponent |
 | = |	Assignment |
 
 
@@ -162,7 +161,7 @@ function draw() {
   line(xpos + (xstep * 8), ypos_top, xpos + (xstep * 8), ypos_bottom);
 }
 ```
-There is actually a way to more compactly express this set of instructions with a **for loop**. More on that later. First we will add some randomness to our drawing and set our sketch in motion.
+There is actually a way to more compactly express this set of instructions with **a loop**. More on that later. First we will add some randomness to our drawing and set our sketch in motion.
 
 ## Random
 Unlike the smooth, linear motion common to computer graphics, motion in the physical world is usually idiosyncratic. We can simulate the unpredictable qualities of the world by generating random numbers. The [`random()`](https://p5js.org/reference/#/p5/random) function calculates these values and we can set a range to tune the amount of disarray in a program.    
@@ -176,9 +175,8 @@ function draw() {
 }
 ```
 
-#### A second example
+#### Random Dots
 ```JavaScript
-// random dots
 let x, y;  // create two variables x, y for position
 
 function setup() {
@@ -197,10 +195,9 @@ function draw() {
 ```
 note:
 
-- `let x, y;` is a shorthand notation for 
+- `let x, y;` is a shorthand notation for     
 `let x;     
-let y;`
-- As we only need the variables x and y in the function draw loop we could also create them there using var (but let would work as well). 
+let y;` 
 - The filter BLUR executes a Gaussian blur, the parameter 1 specifies the intensity of the filter. 
 
 #### back to our 9 lines in the wind
@@ -461,8 +458,6 @@ function draw() {
 
 And now try out adding the wind factor by displacing the top x coordinate!!
  
-<details>
-<summary>Solution - click to expand!</summary>
 ```javaScript
 let xpos = 80;
 let xstep = 25;
@@ -484,9 +479,10 @@ function draw() {
   xpos = 80;
 }
 ```
-Note that background needs to move from the setup function to draw     
-and that you need to reset the variable xpos to is base value.
-</details>
+Note: 
+- background(255) needs to move from the setup function to draw.     
+- you need to reset the variable xpos to is base value at th end.
+
 
 ## Tiling - the For Loop
 
