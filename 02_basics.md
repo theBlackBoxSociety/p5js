@@ -255,7 +255,7 @@ Note:
 ## Circular Motion
 Circular motion is a movement in which an object travels along the circumference of a circle. However, this simple movement has much more beauty in it than it might seem. We will only lift a tip of the veil of a very fascinating domain including [Simple Harmonic Motion](https://en.wikipedia.org/wiki/Simple_harmonic_motion). Think about the swing of a pendulum, a weight that swings up and down on a spring.
 
-Working with circular motion requires [a little bit of trigonometry knowledge](https://processing.org/tutorials/trig/) but we will limit this to the sine / [sin()](https://p5js.org/reference/#/p5/sin) and cosine / `[cos()](https://p5js.org/reference/#/p5/cos)` functions and their relationship. 
+Working with circular motion requires [a little bit of trigonometry knowledge](https://processing.org/tutorials/trig/) but we will limit this to the sine / `[sin()](https://p5js.org/reference/#/p5/sin)` and cosine / `[cos()](https://p5js.org/reference/#/p5/cos)` functions and their relationship. 
 
 Sine and Cosine? Basically, if you were to move around the perimeter of a circle, your horizontal position would trace out a cosine function while your vertical position would trace out a sine. 
 
