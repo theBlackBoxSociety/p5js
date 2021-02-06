@@ -255,7 +255,7 @@ Note:
 ## Circular Motion
 Circular motion is a movement in which an object travels along the circumference of a circle. However, this simple movement has much more beauty in it than it might seem. We will only lift a tip of the veil of a very fascinating domain including [Simple Harmonic Motion](https://en.wikipedia.org/wiki/Simple_harmonic_motion). Think about the swing of a pendulum, a weight that swings up and down on a spring.
 
-Working with circular motion requires [a little bit of trigonometry knowledge](https://processing.org/tutorials/trig/) but we will limit this to the sine / `[sin()](https://p5js.org/reference/#/p5/sin)` and cosine / `[cos()]`(https://p5js.org/reference/#/p5/cos) functions and their relationship. 
+Working with circular motion requires [a little bit of trigonometry knowledge](https://processing.org/tutorials/trig/) but we will limit this to the sine / [`sin()`](https://p5js.org/reference/#/p5/sin) and cosine / [`cos()`](https://p5js.org/reference/#/p5/cos) functions and their relationship. 
 
 Sine and Cosine? Basically, if you were to move around the perimeter of a circle, your horizontal position would trace out a cosine function while your vertical position would trace out a sine. 
 
@@ -268,7 +268,7 @@ A full circle is 360 DEGREES, which is equal to TWO_PI (2π) in RADIANS.
 furthermore 45° = QUARTER_PI, 90° = HALF_PI and 180° = PI
 See [this chart on the conversion between degrees and radians](https://en.wikipedia.org/wiki/Radian#/media/File:Degree-Radian_Conversion.svg)
 
-If you prefer to use degree measurements, you ca convert to radians using the `[radians()](https://p5js.org/reference/#/p5/radians)` function or use the `[angleMode(DEGREES)](https://p5js.org/reference/#/p5/angleMode)` function.
+If you prefer to use degree measurements, you ca convert to radians using the [`radians()`](https://p5js.org/reference/#/p5/radians) function or use the [`angleMode(DEGREES)`](https://p5js.org/reference/#/p5/angleMode) function.
 
 #### Sine and Cosine
 
@@ -308,7 +308,7 @@ function draw() {
 ```
 Note: 
 
-- To make our circle travel around the centre of the canvas, we need to work with those xOffset and yOffset variables. The `[translate()](https://p5js.org/reference/#/p5/translate)` function, that we will see later, simplifies this process considerably.
+- To make our circle travel around the centre of the canvas, we need to work with those xOffset and yOffset variables. The [`translate()`](https://p5js.org/reference/#/p5/translate) function, that we will see later, simplifies this process considerably.
 - add the code below just before the `angle += speed;` line to see the sine and cosine in action in a simple harmonic motion.
 ```javaScript
 circle(xOffset-50, yOffset, cos(angle)*100)
