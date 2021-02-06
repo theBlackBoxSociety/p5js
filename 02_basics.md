@@ -590,35 +590,37 @@ The initial state of the for loop sets a variable h to 10. The code in the loop 
 
 #### Time for Serious Tiling.
 ```JavaScript
-// for loop example
+// a line of circles
 let diam = 30;
-let step = 10;
+let step = 15;
 
 function setup() {
-  createCanvas(500, 200);
+  createCanvas(510, 200);
+  background(255, 204, 0);
   noFill();
 }
 
 function draw() {
-  for (var x = diam; x < width - diam; x += step) {
+  for (var x = diam/2; x <= width - diam/2; x += step) {
     ellipse(x, height / 2, diam, diam);
   }
 }
 ```
 
 ```JavaScript
-// for loop example with 2 nested for loops
+// 2 nested for loops forming a grid of circles
 let diam = 30;
-let step = 10;
+let step = 15;
 
 function setup() {
-  createCanvas(500, 200);
+  createCanvas(510, 210);
+  background(255, 204, 0);
   noFill();
 }
 
 function draw() {
-  for (let x = diam / 2; x < width - diam / 2; x += step) {
-    for (let y = diam / 2; y < height - diam / 2; y += step) {
+  for (let x = diam/2; x <= width - diam/2; x += step) {
+    for (let y = diam/2; y <= height - diam/2; y += step) {
       ellipse(x, y, diam, diam);
     }
   }
