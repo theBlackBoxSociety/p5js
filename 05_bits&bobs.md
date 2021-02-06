@@ -1,29 +1,10 @@
 <details>
 <summary>Table of Contents - click to expand!</summary>
 
-- Transformations
-- scale
-- translate
-- rotate
-- push & pop
-
-- Media
-- images (function preload!!)
-- video (files & camera)
-- sounds (extra library)
-
-- Text & type
-
-- Custom functions / abstractions
-- Buttons & sliders
-- Event functions (?)
-- Arrays
-- Recursion??
-- Objects
-- more on sound (Synthesizing and analyzing sound)
 - using external libraries 
 	- p5.play
 	- https://github.com/zenozeng/p5.js-svg
+- fullscreen
 - export saving png, svg & video
 	- save() & saveCanvas() 
 	function keyPressed() {
@@ -34,7 +15,9 @@
 	>> screenrecording is much easier
 - multiple sketches
 	http://joemckaystudio.com/multisketches/
-	
+  
 </details>
 
-# P5.JS • Advanced Stuff
+# P5.JS • Bits & Bobs
+
+🚧 🚧 🚧 🚧 🚧 NOT FINISHED YET 🚧 🚧 🚧 🚧 🚧

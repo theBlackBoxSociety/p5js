@@ -19,13 +19,13 @@ It's perfect to start by copying, modifying and merging code examples and ideas 
 However, it is important that you type (and not copy - paste) the code examples during this lesson. Syntax is something that you need to get the hang of. Train that muscle memory.
  
 ## Inspiration
-- [Casey Reas](http://reas.com/) • co-founder of Processing
-- [Lauren Lee McCarthy](https://lauren-mccarthy.com/) • creator of p5.js
+- [Casey Reas](http://reas.com/), co-founder of Processing
+- [Lauren Lee McCarthy](https://lauren-mccarthy.com/), creator of p5.js
 - [p5.js 2020 Showcase](https://showcase.p5js.org/)
 - [OpenProcessing](https://www.openprocessing.org/), an online community platform devoted to sharing and discussing Processing / p5.js sketches in a collaborative, open-source environment
 - [Generative Design / Gestaltung](http://www.generative-gestaltung.de/2/) Book & website on generative art & design
-- [LIA](http://www.liaworks.com/) • pioneer of software and net art (active since 1995)
-- [Hamid Naderi Yeganeh](https://about.me/naderiyeganeh) • an Iranian mathematical artist and digital artist
+- [LIA](http://www.liaworks.com/), pioneer of software and net art (active since 1995)
+- [Hamid Naderi Yeganeh](https://about.me/naderiyeganeh), an Iranian mathematical artist and digital artist
 - https://36xp5.site/
   
 ## Additional Learning resources:  

@@ -17,6 +17,7 @@
 </details>
 
 # P5.JS • Quickstart
+
 <sup>*based on [this note](https://creative-coding.decontextualize.com/first-steps/) by Allison Parrish and bits and pieces from here and there.*</sup>
 
 This tutorial will take you through the steps necessary to create your first p5.js sketches.
@@ -30,7 +31,9 @@ When you load the web editor, you can get started right away but only with an ac
 
 Here’s what the web editor looks like and an explanation of the important parts.
 
-![Screenshot of p5.js web editor with circled numbers](img/p5js_editor.png)
+![Screenshot of p5.js web editor with circled numbers](img/p5js_editor.png)    
+<sub>p5.js web editor</sub>
+
 1. The **code** pane is where you type your code.
 2. The **preview** pane is where your sketch will show up.
 3. The **console** pane is where error messages from your code show up. You can also use the `console.log()` function to make text appear here while your program is running.
@@ -133,7 +136,8 @@ Nearly all digital displays are broken up into tiny squares called pixels. Norma
 
 Every p5.js sketch has a size in pixels — the number of pixels wide it is, and the number of pixels tall.
 
-![sketch of the p5.js coordinate system](img/p5js_coordinatesystem.png)
+![sketch of the p5.js coordinate system](img/p5js_coordinatesystem.png)    
+<sub>the p5.js coordinate system</sub>
 
 The pixel in the far upper left-hand corner is designated as the pixel at coordinate 0, 0. As you move further left, the X coordinate increases. As you move further down, the Y coordinate increases, so that the coordinate of the middle of the sketch is 199, 199 and the coordinate at the lower right-hand corner is 399, 399. 
 
@@ -282,13 +286,14 @@ In this section, we’re going to explore how to add animation to our sketches.
 
 This moment is also the right time to talk about the two two distinct parts, so-called function blocks: `function setup()` and `function draw()` that shape our scripts. A function block is a way of chunking a group of commands together.
 
-The setup() function is called once when the program starts. It’s used to define initial environment properties such as screen size and background color and to load media such as images and fonts as the program starts.
+The `setup()` function is called once when the program starts. It’s used to define initial environment properties such as screen size and background color and to load media such as images and fonts as the program starts.
 
-The draw() function continuously executes the lines of code contained inside its block until the program is stopped. 
+The `draw()` function continuously executes the lines of code contained inside its block until the program is stopped. 
 
 There can only be one setup() and one draw() function for each program.
 
-![diagram of the lifecycle of a p5.js sketch](img/p5js_lifecycle.png)
+![diagram of the lifecycle of a p5.js sketch](img/p5js_lifecycle.png)    
+<sub>diagram of the lifecycle of a p5.js sketch</sub>
 
 Let try this! Copy the following code.
 ```JavaScript
@@ -314,13 +319,17 @@ Notice also that the background function has moved to the setup function. Can yo
 
 Additionally you can set the speed with which draw() is called by using the `frameRate()` function. If you give it a number (12, 24, 25, and 30 are typical), it will attempt to maintain that rate, calling draw() regularly. The default frame rate is based on the frame rate of the display (here also called "refresh rate"), which is set to 60 frames per second on most computers.
 
+There are two other function blocks that I'll mention now but come back to later: 
+`mousePressed()`& `preload()`.
+
 ## When something goes wrong
 Programming is nitpicking work, and it’s easy to get the syntax wrong. If something goes wrong, you’ll get an error message. Error message will appear in that little box beneath the source code editing area, called the **console**.
 
 If you can’t find where the problem is, don’t fret! The error message will give you some hints. The number at the beginning of the error tells you the number of the line that p5.js thinks the problem is on. (Sometimes it’ll be off by a line or two, so you’ll have to hunt around.) The message gives you some idea of what the problem is, although the description is filtered through the weird language of programming language parsers.
 
 ![Screenshot of web editor showing an error message, "Reference Error:
-crateCanvas is not defined"](img/p5js_error.png)
+crateCanvas is not defined"](img/p5js_error.png)    
+<sub>The console showing an error message</sub>
 
 This error message shows that there’s a problem on line 2: I accidentally spelled it crateCanvas instead of createCanvas, and JavaScript is helpfully informing me that it has no idea what crateCanvas is.
 
@@ -334,7 +343,8 @@ Have a look at the 3 files *index.html*, *sketch.js* & *style.css* with Atom (or
 
 You will recognise the contents of *sketch.js*. 
 
-![screenshot of the button to open the files pane in the web editor](img/p5js_filespane.png)
+![screenshot of the button to open the files pane in the web editor](img/p5js_filespane.png)    
+<sub>open the files pane in the web editor</sub>
 
 You can actually see (and edit) all 3 files (not the library) in the editor as well by clicking the arrow in the top left of the editor pane, next to sketch.js. A sidebar will appear with the three files listed. You can select all three and thus modify them.  
 
@@ -365,4 +375,8 @@ print("mouseY: " + mouseY);
 The text between the quotes ("mouseX: ") is there to dissociate and clarify the different values.
 
 ## Exercise 
-Create a self-portrait in p5.js 
+Try to replicate the shapes below with code. These functions might help you to start: background() circle() fill() stroke() strokeWeight() line() rect(). For more information, have a look at [the official documentation](https://p5js.org/reference/).
+
+![](img/p5js_ex1.png)
+
+If this was a cup of tea you can built your own 

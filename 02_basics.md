@@ -1,33 +1,21 @@
 <details>
 <summary>Table of Contents - click to expand!</summary>
-- Comments	
-- Expressions / math
- 	- mathematical operators
-	- randomness
-- variables
-	- let
-	- let vs var (https://www.youtube.com/watch?v=q8SHaDQdul0&ab_channel=TheCodingTrain)	
-- motion
-	- Changing variables over time
-	- Circular motion
-- conditionals 
-	- if statement
-	- Relational expressions
-	- Simple oscillation (modulo & sine)
-- loops
-	- while 
-	- for
-- interaction
-	- mouseposition
-	- mouseclick
-	- touches
-	- key
-	- Event functions
+
+- [Comments](#comments)
+- [Expressions (or math)](#expressions-or-math)
+- [Variables](#variables)
+- [Random](#random)
+- [Linear Motion](#linear-motion)
+- [Circular Motion](#circular-motion)
+- [Conditionals](#conditionals)
+- [Repetition - The While Loop](#repetition-the-while-loop)
+- [Tiling - the For Loop](#tiling-the-for-loop)
+
 </details>
 
-# P5.JS • Foundation: expressions, variables,  conditionals, ...
+# P5.JS • Foundation: expressions, variables,  conditionals, loops, ...
 
-In the previous tutorial, we went through the basics of working with p5.js. This tutorial goes over a couple of fundamental concepts of computer programming with expressions (or math), variables, conditionals and loops. We will apply these concepts in working with motion, interaction, visual transformations and working with media (images).     
+In the previous tutorial, we went through the basics of working with p5.js. This tutorial goes over a couple of fundamental concepts of computer programming with expressions (or math), variables, conditionals and loops. We will apply these concepts in working with motion.     
 But we will start with something that is pointless for the machine but, in time, will certainly prove its value to yourself and potential co-coders, *comments*.
 
 ## Comments
@@ -77,7 +65,7 @@ Note:
 - `rectMode(CENTER)` is far more handy here than the default `rectMode(DEFAULT`. 
 - /2 is actually the same *0.5
 
-### Common Mathematical Operators  are:
+#### Common Mathematical Operators  are:
 | Character | Operator |
 | :-: | --- |
 | +	| Addition |
@@ -87,7 +75,7 @@ Note:
 | = |	Assignment |
 
 
-### Yet there are some rules to remember:
+#### Yet there are some rules to remember:
 - The order of operations matters, [the PEMDAS rule](https://en.wikipedia.org/wiki/Order_of_operations). 3+2&ast;3 will yield 9. If you want it to result 15 you must write it as (3+2)*3. 
 - You can not use **x** as a symbol for multiplication. x is a letter and will be viewed by p5.js as a variable.
 - An equals sign works a bit differently than it does in math class. It is used to assign a value to a variable. More on this soon.
@@ -227,8 +215,10 @@ function draw() {
 ```
 Adding the line `wind = 1 + mouseX/20;` in our draw loop will make the random range restricted from 1 to 20 (400/20) depending on the x position of the mouse.
 
+Note: There is actually a nicer, less machine-like, random function, `noise()` form Perlin noise. It produces a more naturally ordered, harmonic succession of numbers. It was invented by Ken Perlin in the 1980s and been used since in graphical applications to produce procedural textures, natural motion, shapes, terrains etc. 
 
-## Motion
+
+## Linear Motion
 We have seen that code inside the `draw()` function is called on every program cycle repeatedly and we can set the speed with the `frameRate()` function. 
 
 Well, another power of using variables is we can change them on every cycle. 
@@ -262,6 +252,71 @@ Note:
 - `xpos += xstep;` is actually a shorthand notation of `xpos = xpos + xstep;`
 - Even so is writing `a++` equivalent to `a = a + 1` and writing `a--`  equivalent to `a = a - 1`.
 
+## Circular Motion
+Circular motion is a movement in which an object travels along the circumference of a circle. However, this simple movement has much more beauty in it than it might seem. We will only lift a tip of the veil of a very fascinating domain including [Simple Harmonic Motion](https://en.wikipedia.org/wiki/Simple_harmonic_motion). Think about the swing of a pendulum, a weight that swings up and down on a spring.
+
+Working with circular motion requires [a little bit of trigonometry knowledge](https://processing.org/tutorials/trig/) but we will limit this to the sine / `[sin()](https://p5js.org/reference/#/p5/sin)` and cosine / `[cos()](https://p5js.org/reference/#/p5/cos)` functions and their relationship. 
+
+Sine and Cosine? Basically, if you were to move around the perimeter of a circle, your horizontal position would trace out a cosine function while your vertical position would trace out a sine. 
+
+![gif animation illustrating the sine and cosine relationship](img/p5js_son_cosin.gif)
+
+#### How do angles work in p5.js 
+Angles are set in radians rather than degrees. Radians are angle measurements based on the value of pi (3.14159).
+
+A full circle is 360 DEGREES, which is equal to TWO_PI (2π) in RADIANS.
+furthermore 45° = QUARTER_PI, 90° = HALF_PI and 180° = PI
+See [this chart on the conversion between degrees and radians](https://en.wikipedia.org/wiki/Radian#/media/File:Degree-Radian_Conversion.svg)
+
+If you prefer to use degree measurements, you ca convert to radians using the `[radians()](https://p5js.org/reference/#/p5/radians)` function or use the `[angleMode(DEGREES)](https://p5js.org/reference/#/p5/angleMode)` function.
+
+#### Sine and Cosine
+
+Using sin(angle) * radius, we can calculate the x coordinate of a point on the circumference of a circle.
+Using cos(angle) * radius, we can calculate the y coordinate of the same point.
+
+As a result, sine and cosine are two numbers that oscillate between 1 and -1 according to angle change.
+
+```javaScript
+let radius;
+let angle = 0;
+let speed = 0.05;
+let xOffset, yOffset;
+
+function setup() {
+  createCanvas(400, 300);
+  radius = width / 4;
+  xOffset = (width/2);
+  yOffset = (height/2);
+}
+
+function draw() {
+  background(200);
+  // Empty Circle as path
+  noFill();
+  stroke(100);
+  circle(0+xOffset, 0+yOffset, radius * 2);
+  // Rotating Circle
+  noStroke();
+  fill(255,0,0);
+  let x = cos(angle) * radius;
+  let y = sin(angle) * radius;
+  circle(x+xOffset, y+yOffset, 20);
+  // Increase angle every frame
+  angle += speed;
+}
+```
+Note: 
+
+- To make our circle travel around the centre of the canvas, we need to work with those xOffset and yOffset variables. The `[translate()](https://p5js.org/reference/#/p5/translate)` function, that we will see later, simplifies this process considerably.
+- add the code below just before the `angle += speed;` line to see the sine and cosine in action in a simple harmonic motion.
+```javaScript
+circle(xOffset-50, yOffset, cos(angle)*100)
+circle(xOffset+50, yOffset, sin(angle)*100)
+```
+
+Challenge: modify the code to create a spiralling motion.
+
 
 ## Conditionals
 
@@ -287,7 +342,8 @@ if (diam <= 400) {
 	// execute this code if diam > 400
 }
 ```
-![](img/p5js_if_else.png)
+![](img/p5js_if_else.png)    
+<sub>Flow diagram of conditional test</sub>
 
 If you imagine the flow of execution as a trickle of water running down the script, by setting a conditional you’re effectively creating different channels for the stream to follow.
 
@@ -352,7 +408,12 @@ Thus the else part is not always necessary and can be omitted.
 But we don’t live in an either-or world and so sometimes just having an if and an else isn’t enough.    
 Then **else if** comes to the rescue.
 
+![](img/p5js_else_if.png)
+
+
+
 #### Lets try a more advanced conditional with 2 tests
+
 ```JavaScript
 // Draw a Random Shape
 let dice;
@@ -385,9 +446,11 @@ So, if the result of the function random given to the variable dice is greater t
 - Recap. Any **if** statement can have any number of associated **else if** clauses. Even if you have an **else if** clause, you don’t necessarily need to have an **else** clause.
 
 
-And to finish this chapter on conditionals a somewhat classic example
+
 #### a Bouncing Ball    
-draw an ellipse that moves from left to right. When it reaches the right hand side of the sketch, make it move from right to left. When it reaches the left hand side again, make it move from left to right again.
+And to finish this chapter on conditionals a somewhat classic example
+
+Draw an ellipse that moves from left to right. When it reaches the right hand side of the sketch, make it move from right to left. When it reaches the left hand side again, make it move from left to right again.
 
 ```javaScript
 let xspeed = 4;
@@ -413,9 +476,11 @@ function draw() {
 }
 ```
 
+
+
 ## Repetition - The While Loop 
 
-As you write more programs, you’ll notice that patterns occur when lines of code are repeated, but with slight variations. A code structure called **a loop** makes it possible to run a line of code more than once to condense this type of repetition into fewer lines. This makes your programs more modular and easier to change.
+As you write more programs, you’ll notice that patterns occur when lines of code are repeated, but with slight variations. A code structure called **a loop** (or iteration loop) makes it possible to run a line of code more than once to condense this type of repetition into fewer lines. This makes your programs more modular and easier to change.
 
 ```JavaScript
 let number = 99;
@@ -431,8 +496,8 @@ This outputs the value of the variable *'number'* to the console window 99 times
 
 Note that if you don’t include the 'number--' line inside the loop, which subtracts 1 from the number every time it loops, the condition will never be met and the loop will go on forever.
 
-![](img/p5js_while_loop.png)
-_Flow diagram of a while loop_
+![](img/p5js_while_loop.png)    
+<sub>Flow diagram of a while loop</sub>
 
 
 #### Lets draw a line repeatedly as we did before.
@@ -457,7 +522,7 @@ function draw() {
 ```
 
 And now try out adding the wind factor by displacing the top x coordinate!!
- 
+
 ```javaScript
 let xpos = 80;
 let xstep = 25;
@@ -488,8 +553,8 @@ Note:
 
 The for loop is used when you want to iterate through a set number of steps, rather than just wait for a condition to be satisfied. The syntax and flow diagram is as follows:
 
-![](img/p5js_for_loop.png)
-_Flow diagram of a for loop_
+![](img/p5js_for_loop.png)    
+<sub>Flow diagram of a for loop</sub>
 
 The code between the curly brackets { } is called **a block**. This is the code that will be repeated on each iteration of the loop. Inside the parentheses are **three statements**, separated by semicolons, that work together to control how many times the code inside is run. From left to right, these statements are referred to as **the initialization** (init), **the test**, and **the update**. The ‘init’ typically declares a new variable to use within the for loop and assigns a value. The variable name ‘i’ is frequently used. The ‘test’ evaluates the value of this variable, and the ‘update’ changes it’s value.
 
@@ -512,7 +577,7 @@ function draw() {
   background(255);
   fill(255);
   strokeWeight(3);
-  for (var i = 25; i < 400; i += 25) {
+  for (let i = 25; i < 400; i += 25) {
     stroke(50);
     line(i, 200, origx, origy);
     stroke(240);
@@ -552,8 +617,8 @@ function setup() {
 }
 
 function draw() {
-  for (var x = diam / 2; x < width - diam / 2; x += step) {
-    for (var y = diam / 2; y < height - diam / 2; y += step) {
+  for (let x = diam / 2; x < width - diam / 2; x += step) {
+    for (let y = diam / 2; y < height - diam / 2; y += step) {
       ellipse(x, y, diam, diam);
     }
   }
@@ -576,8 +641,8 @@ function setup() {
 }
 
 function draw() {
-  for (var x = tile / 2; x <= width; x += tile) {
-    for (var y = tile / 2; y <= height; y += tile) {
+  for (let x = tile / 2; x <= width; x += tile) {
+    for (let y = tile / 2; y <= height; y += tile) {
       dice = random(1);
       if (dice <= 0.5) {
         line(x - tile / 2, y - tile / 2, x + tile / 2, y + tile / 2);
@@ -601,8 +666,8 @@ function setup() {
 }
 
 function draw() {
-  for (var x = tile / 2; x <= width; x += tile) {
-    for (var y = tile / 2; y <= height; y += tile) {
+  for (let x = tile / 2; x <= width; x += tile) {
+    for (let y = tile / 2; y <= height; y += tile) {
       dice = random(1);
       if (dice <= 0.5) {
         line(x, y - tile / 2, x, y + tile / 2);
@@ -629,8 +694,8 @@ function setup() {
 }
 
 function draw() {
-  for (var x = tile / 2; x <= width; x += tile) {
-    for (var y = tile / 2; y <= height; y += tile) {
+  for (let x = tile / 2; x <= width; x += tile) {
+    for (let y = tile / 2; y <= height; y += tile) {
       dice = random(1);
       if (dice <= 0.5) {
         ellipse(x, y, tile - gutter, tile - gutter);
@@ -659,8 +724,8 @@ function setup() {
 }
 
 function draw() {
-  for (var x = tile / 2; x <= width; x += tile) {
-    for (var y = tile / 2; y <= height; y += tile) {
+  for (let x = tile / 2; x <= width; x += tile) {
+    for (let y = tile / 2; y <= height; y += tile) {
       dice = random(1);
       dice2 = random(1);
       if (dice <= 0.333) {
@@ -719,8 +784,8 @@ function setup() {
 }
 
 function draw() {
-  for (var x = tile / 2; x <= width; x += tile) {
-    for (var y = tile / 2; y <= height; y += tile) {
+  for (let x = tile / 2; x <= width; x += tile) {
+    for (let y = tile / 2; y <= height; y += tile) {
       dice = random(1);
       dice2 = random(1);
       fill(100*dice+155,dice2*255,100); 
@@ -755,44 +820,3 @@ function draw() {
   }
 }
 ```
-
-## circular Motion
-:construction:
-circular motion (sine / cosine functions)
-https://processing.org/tutorials/trig/
-```JavaScript
-/* CIRCULAR MOTION
- Cos motion -> constant middleX / middleY  + cos(angle) * scalar. 
- Sin motion is the same.
- Sin motion + cos motion = Circular motion
- */
-let middleX, middleY;
-let angle = 0;
-let scalar = 10;
-let speed = 0.05;
-let diam = 10;
-
-function setup() {
-  createCanvas(500, 500);
-  middleX = width / 2;
-  middleY = height / 2;
-  smooth();
-  noFill();
-}
-
-function draw() {
-  //background(0);
-  var x = middleX + sin(angle) * scalar;
-  var y = middleY + cos(angle) * scalar;
-  ellipse(x, y, diam, diam);
-  angle = angle + speed;
-  scalar = scalar + speed;
-  if (scalar > width / 2) {
-    noLoop();
-  }
-}
-```
-
-
-
- 
