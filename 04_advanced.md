@@ -1,12 +1,13 @@
 <details>
 <summary>Table of Contents - click to expand!</summary>
 
-- Custom functions / abstractions
-- Buttons & sliders
+
 - Arrays
-- Recursion??
+
 - Objects 
 https://gokcetaskan.com/artofcode/classes
+
+- Buttons & sliders
 - more on sound (Synthesizing and analyzing sound)
 
 </details>
@@ -239,128 +240,7 @@ void draw() {
 _a Network_
 
 
-## <a name="recursion">23. Recursion</a>
-Recursion is a way of controlling the flow of a program with a function that calls itself. Unlike iteration, where we walk through a repeated series of commands step-by-step, recursion can create complex behaviour such as fractals that are impossible to make in another way.
-
-A recursive function always:
-1. Has a test to see if it's time to stop (otherwise it will continue forever and freeze your program!)
-2. Calls itself, usually with modified data.
- 
-There are different ways to set a limit. You can use a variable to count the recursion depth, and stop when the depth is enough for you. You could also set a limit by drawing shapes that get smaller and smaller, and then stop when they are small enough.
-
-```Java
-void setup() {
-  size(600, 500);
-  background(255);
-}
-
-void draw() {
-  noFill();
-  drawCircle(width/2, height/2, width*0.75);
-  noLoop();
-}
-
-void drawCircle(int x, int y, float radius) {
-  ellipse(x, y, radius, radius);
-  if (radius > 2) {
-    radius *= 0.75;
-    // The drawCircle() function is calling itself recursively.
-    drawCircle(x, y, radius);
-  }
-}
-
-```
 
 
-```java
-void setup() {
-  size(900, 700);
-  background(255);
-  noFill(); 
-  stroke(0);
-  strokeWeight(1);
-  rectMode(CENTER);
-  noLoop();
-}
-
-void draw() {
-  recursion(width/2, height/2, 320);
-}
-
-// this recursion function takes 3 arguments: location (x,y) and size (s)
-void recursion(float x, float y, float s) {
-  // The test: ensure that size s is greater than zero
-  if (s > 3) {
-    // an circle / square of size (s) at (x,y)
-    //ellipse(x, y, s, s);
-    rect(x, y, s, s);
-    // and a recursion in half size and placed on both sides of the shape
-    recursion(x + (s/2), y, s*0.5);
-    recursion(x - (s/2), y, s*0.5);
-    // and a a third recursion in half size and placed on top of the shape
-    recursion(x, y- (s/2), s*0.5);
-  }
-}
-```
-```java
-/*
-Recursive Tree by Daniel Shiffman.
-https://processing.org/examples/tree.html
-
-Renders a simple tree-like structure via recursion. 
-The branching angle is calculated as a function of the horizontal mouse location. 
-Move the mouse left and right to change the angle.
-*/
-
-float theta;  
-int lenght = 200;
-
-void setup() {
-  size(700, 700);
-}
-
-void draw() {
-  background(0);
-  frameRate(30);
-  stroke(255);
-  // Let's pick an angle 0 to 90 degrees based on the mouse position
-  float a = (mouseX / (float) width) * 90;
-  // Convert it to radians
-  theta = radians(a);
-  // Start the tree from the bottom of the screen
-  translate(width/2,height);
-  // Draw a line 120 pixels
-  line(0,0,0,-200);
-  // Move to the end of that line
-  translate(0,-lenght);
-  // Start the recursive branching!
-  branch(lenght);
-
-}
-
-void branch(float h) {
-  // Each branch will be 2/3rds the size of the previous one
-  h *= 0.66;
-  
-  // All recursive functions must have an exit condition!!!!
-  // Here, ours is when the length of the branch is 2 pixels or less
-  if (h > 2) {
-    pushMatrix();    // Save the current state of transformation (i.e. where are we now)
-    rotate(theta);   // Rotate by theta
-    line(0, 0, 0, -h);  // Draw the branch
-    translate(0, -h); // Move to the end of the branch
-    branch(h);       // Ok, now call myself to draw two new branches!!
-    popMatrix();     // Whenever we get back here, we "pop" in order to restore the previous matrix state
-    
-    // Repeat the same thing, only branch off to the "left" this time!
-    pushMatrix();
-    rotate(-theta);
-    line(0, 0, 0, -h);
-    translate(0, -h);
-    branch(h);
-    popMatrix();
-  }
-}
-```
-
-see also https://natureofcode.com/book/chapter-8-fractals/
+## buttons & sliders
+https://creative-coding.decontextualize.com/browser-controls/

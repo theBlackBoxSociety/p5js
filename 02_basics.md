@@ -8,8 +8,8 @@
 - [Linear Motion](#linear-motion)
 - [Circular Motion](#circular-motion)
 - [Conditionals](#conditionals)
-- [Repetition - The While Loop](#repetition-the-while-loop)
-- [Tiling - the For Loop](#tiling-the-for-loop)
+- [While Loop](#repetition-the-while-loop)
+- [For Loop](#tiling-the-for-loop)
 
 </details>
 
@@ -215,7 +215,7 @@ function draw() {
 ```
 Adding the line `wind = 1 + mouseX/20;` in our draw loop will make the random range restricted from 1 to 20 (400/20) depending on the x position of the mouse.
 
-Note: There is actually a nicer, less machine-like, random function, `noise()` form Perlin noise. It produces a more naturally ordered, harmonic succession of numbers. It was invented by Ken Perlin in the 1980s and been used since in graphical applications to produce procedural textures, natural motion, shapes, terrains etc. 
+Note: There is actually a nicer, less machine-like, random function, [`noise()`](https://p5js.org/reference/#/p5/noise) form Perlin noise. It produces a more naturally ordered, harmonic succession of numbers. It was invented by Ken Perlin in the 1980s and been used since in graphical applications to produce procedural textures, natural motion, shapes, terrains etc. 
 
 
 ## Linear Motion
@@ -478,7 +478,7 @@ function draw() {
 
 
 
-## Repetition - The While Loop 
+## While Loop 
 
 As you write more programs, you’ll notice that patterns occur when lines of code are repeated, but with slight variations. A code structure called **a loop** (or iteration loop) makes it possible to run a line of code more than once to condense this type of repetition into fewer lines. This makes your programs more modular and easier to change.
 
@@ -549,7 +549,7 @@ Note:
 - you need to reset the variable xpos to is base value at th end.
 
 
-## Tiling - the For Loop
+## For Loop
 
 The for loop is used when you want to iterate through a set number of steps, rather than just wait for a condition to be satisfied. The syntax and flow diagram is as follows:
 
