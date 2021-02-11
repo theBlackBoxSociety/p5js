@@ -46,16 +46,13 @@ console.log(1 / 2);
 function setup() {
   createCanvas(400, 300);
   stroke(0);
-  strokeWeight(2);
-  background(238);
+  strokeWeight(3);
+  background(255, 175, 204);
   noFill();
   rectMode(CENTER);
-  // rect
   rect(width/2, height*0.5, 200, 200);
-  // circle
   ellipse(width/2, height*0.5, 200, 200);
-  // triangle
-  triangle(width/2, 51, width-113, 200, 113, 200);
+  triangle(width/2, 50, width-113, 200, 113, 200);
 }
 ```
 Note:
@@ -103,50 +100,50 @@ Declaring the variable before the setup area means the variable is **'global'** 
 
 #### 9 vertical lines
 ```JavaScript
-let ypos = 180;
-let lenght = 40;
+let yTop = 20;
+let yBottom = 180;
 
 function setup() {
   createCanvas(400, 200);
 }
 
 function draw() {
-  background(255);
-  line(100, ypos, 100, lenght);
-  line(125, ypos, 125, lenght);
-  line(150, ypos, 150, lenght);
-  line(175, ypos, 175, lenght);
-  line(200, ypos, 200, lenght);
-  line(225, ypos, 225, lenght);
-  line(250, ypos, 250, lenght);
-  line(275, ypos, 275, lenght);
-  line(300, ypos, 300, lenght);
+  background(255, 175, 204);
+  line(100, yTop, 100, yBottom);
+  line(125, yTop, 125, yBottom);
+  line(150, yTop, 150, yBottom);
+  line(175, yTop, 175, yBottom);
+  line(200, yTop, 200, yBottom);
+  line(225, yTop, 225, yBottom);
+  line(250, yTop, 250, yBottom);
+  line(275, yTop, 275, yBottom);
+  line(300, yTop, 300, yBottom);
 }
 ```
 The real power of variables is that you can use them in any context that you would normally need to write a value. This means that you can use variables in expressions. The example above can be adapted as followed.
 
-#### 9 vertical lines bis
+#### 9 vertical lines with more variables
 ```JavaScript
-let xpos = 100;
-let xstep = 25;
-let ypos_top = 20;
-let ypos_bottom = 180;
+let xPos = 100;
+let xStep = 25;
+let yTop = 20;
+let yBottom = 180;
 
 function setup() {
   createCanvas(400, 200);
 }
 
 function draw() {
-  background(255);
-  line(xpos + (xstep * 0), ypos_top, xpos + (xstep * 0), ypos_bottom);
-  line(xpos + (xstep * 1), ypos_top, xpos + (xstep * 1), ypos_bottom);
-  line(xpos + (xstep * 2), ypos_top, xpos + (xstep * 2), ypos_bottom);
-  line(xpos + (xstep * 3), ypos_top, xpos + (xstep * 3), ypos_bottom);
-  line(xpos + (xstep * 4), ypos_top, xpos + (xstep * 4), ypos_bottom);
-  line(xpos + (xstep * 5), ypos_top, xpos + (xstep * 5), ypos_bottom);
-  line(xpos + (xstep * 6), ypos_top, xpos + (xstep * 6), ypos_bottom);
-  line(xpos + (xstep * 7), ypos_top, xpos + (xstep * 7), ypos_bottom);
-  line(xpos + (xstep * 8), ypos_top, xpos + (xstep * 8), ypos_bottom);
+  background(255, 175, 204);
+  line(xPos + (xStep * 0), yTop, xPos + (xStep * 0), yBottom);
+  line(xPos + (xStep * 1), yTop, xPos + (xStep * 1), yBottom);
+  line(xPos + (xStep * 2), yTop, xPos + (xStep * 2), yBottom);
+  line(xPos + (xStep * 3), yTop, xPos + (xStep * 3), yBottom);
+  line(xPos + (xStep * 4), yTop, xPos + (xStep * 4), yBottom);
+  line(xPos + (xStep * 5), yTop, xPos + (xStep * 5), yBottom);
+  line(xPos + (xStep * 6), yTop, xPos + (xStep * 6), yBottom);
+  line(xPos + (xStep * 7), yTop, xPos + (xStep * 7), yBottom);
+  line(xPos + (xStep * 8), yTop, xPos + (xStep * 8), yBottom);
 }
 ```
 There is actually a way to more compactly express this set of instructions with **a loop**. More on that later. First we will add some randomness to our drawing and set our sketch in motion.
@@ -190,10 +187,10 @@ let y;`
 
 #### back to our 9 lines in the wind
 ```JavaScript
-let xpos = 100;
-let xstep = 25;
-let ypos_top = 20;
-let ypos_bottom = 180;
+let xPos = 100;
+let xStep = 25;
+let yTop = 20;
+let yBottom = 180;
 let wind = 5;
 
 function setup() {
@@ -201,19 +198,19 @@ function setup() {
 }
 
 function draw() {
-  background(255);
-  line(xpos + (xstep * 0)+random(-wind,wind), ypos_top, xpos + (xstep * 0), ypos_bottom);
-  line(xpos + (xstep * 1)+random(-wind,wind), ypos_top, xpos + (xstep * 1), ypos_bottom);
-  line(xpos + (xstep * 2)+random(-wind,wind), ypos_top, xpos + (xstep * 2), ypos_bottom);
-  line(xpos + (xstep * 3)+random(-wind,wind), ypos_top, xpos + (xstep * 3), ypos_bottom);
-  line(xpos + (xstep * 4)+random(-wind,wind), ypos_top, xpos + (xstep * 4), ypos_bottom);
-  line(xpos + (xstep * 5)+random(-wind,wind), ypos_top, xpos + (xstep * 5), ypos_bottom);
-  line(xpos + (xstep * 6)+random(-wind,wind), ypos_top, xpos + (xstep * 6), ypos_bottom);
-  line(xpos + (xstep * 7)+random(-wind,wind), ypos_top, xpos + (xstep * 7), ypos_bottom);
-  line(xpos + (xstep * 8)+random(-wind,wind), ypos_top, xpos + (xstep * 8), ypos_bottom);
+  background(255, 175, 204);
+  line(xPos + (xStep * 0)+random(-wind,wind), yTop, xPos + (xStep * 0), yBottom);
+  line(xPos + (xStep * 1)+random(-wind,wind), yTop, xPos + (xStep * 1), yBottom);
+  line(xPos + (xStep * 2)+random(-wind,wind), yTop, xPos + (xStep * 2), yBottom);
+  line(xPos + (xStep * 3)+random(-wind,wind), yTop, xPos + (xStep * 3), yBottom);
+  line(xPos + (xStep * 4)+random(-wind,wind), yTop, xPos + (xStep * 4), yBottom);
+  line(xPos + (xStep * 5)+random(-wind,wind), yTop, xPos + (xStep * 5), yBottom);
+  line(xPos + (xStep * 6)+random(-wind,wind), yTop, xPos + (xStep * 6), yBottom);
+  line(xPos + (xStep * 7)+random(-wind,wind), yTop, xPos + (xStep * 7), yBottom);
+  line(xPos + (xStep * 8)+random(-wind,wind), yTop, xPos + (xStep * 8), yBottom);
 }
 ```
-Adding the line `wind = 1 + mouseX/20;` in our draw loop will make the random range restricted from 1 to 20 (400/20) depending on the x position of the mouse.
+Adding the line `wind = mouseX/20;` in our draw loop will make the random range restricted from 0 to 20 (400/20) depending on the x position of the mouse.
 
 Note: There is actually a nicer, less machine-like, random function, [`noise()`](https://p5js.org/reference/#/p5/noise) form Perlin noise. It produces a more naturally ordered, harmonic succession of numbers. It was invented by Ken Perlin in the 1980s and been used since in graphical applications to produce procedural textures, natural motion, shapes, terrains etc. 
 
@@ -225,31 +222,32 @@ Well, another power of using variables is we can change them on every cycle.
 
 #### our line on the move
 ```javaScript
-let xpos = 10;
-let xstep = 25;
-let ypos_top = 20;
-let ypos_bottom = 180;
+let xPos = 100;
+let xStep = 5;
+let yTop = 20;
+let yBottom = 180;
 
 function setup() {
   createCanvas(400, 200);
-  background(255);
-  frameRate(5);
+  frameRate(10);
 }
 
 function draw() {
-  line(xpos, ypos_top, xpos, ypos_bottom);
-  xpos += xstep;
-  filter(BLUR,1);
+  background(255, 175, 204);
+  line(xPos, yTop, xPos, yBottom);
+  xPos += xStep;
 }
 ```
 
-When you run this you’ll see the line move from left to right. It's position on the x axis is kept in a variable as well as the step (or step size) by which it moves. The draw loop draws the line, and increases the x position diameter by 25.  
+When you run this you’ll see the line move from left to right. It's position on the x axis is kept in a variable as well as the step (or step size) by which it moves. The draw loop draws the line, and increases the x position by 5. 
 
-It would be good if we could prevent the line from moving into infinity. Wouldn't it? With condtionals in the next chapter we can.
+Try to change xStep variable smaller if you want to slow the movement down. You can also make it a floating point number, eg. 0.05 
+
+It would be good if we could prevent the line from moving into infinity. Wouldn't it? With conditionals in the next chapter we can.
 
 Note:
 
-- `xpos += xstep;` is actually a shorthand notation of `xpos = xpos + xstep;`
+- `xPos += xStep;` is actually a shorthand notation of `xPos = xPos + xStep;`
 - Even so is writing `a++` equivalent to `a = a + 1` and writing `a--`  equivalent to `a = a - 1`.
 
 ## Circular Motion
@@ -291,7 +289,7 @@ function setup() {
 }
 
 function draw() {
-  background(200);
+  background(255, 175, 204);
   // Empty Circle as path
   noFill();
   stroke(100);
@@ -310,6 +308,7 @@ Note:
 
 - To make our circle travel around the centre of the canvas, we need to work with those xOffset and yOffset variables. The [`translate()`](https://p5js.org/reference/#/p5/translate) function, that we will see later, simplifies this process considerably.
 - add the code below just before the `angle += speed;` line to see the sine and cosine in action in a simple harmonic motion.
+
 ```javaScript
 circle(xOffset-50, yOffset, cos(angle)*100)
 circle(xOffset+50, yOffset, sin(angle)*100)
@@ -326,7 +325,7 @@ Thus, it checks that a condition has been met before executing the code inside t
 
 In the case below, the conditional asks whether the value of diam is less than or equal to 400. If it is, the code in the block executes. If not, the code in the block is skipped:
 
-```JavaScript
+```javaScript
 // check a condition
 if (diam <= 400) {
 	// execute code between the braces
@@ -335,7 +334,7 @@ if (diam <= 400) {
 ```
 You can also use an else clause to provide a block of code to be executed if the condition isn’t met:
 
-```JavaScript
+```javaScript
 if (diam <= 400) {
 	// execute this code if diam <= 400
 } else {
@@ -368,24 +367,23 @@ In addition you can also use **logic operators** to group conditions:
 
 #### our line on the move in a bounded loop
 ```javaScript
-let xpos = 10;
-let xstep = 25;
-let ypos_top = 20;
-let ypos_bottom = 180;
+let xPos = 100;
+let xStep = 5;
+let yTop = 20;
+let yBottom = 180;
 
 function setup() {
   createCanvas(400, 200);
-  background(255);
-  frameRate(5);
+  frameRate(10);
 }
 
 function draw() {
-  line(xpos, ypos_top, xpos, ypos_bottom);
-  filter(BLUR, 0.8);
-  if (xpos > width - 10) {
-    xpos = 10;
+  background(255, 175, 204);
+  line(xPos, yTop, xPos, yBottom);
+  if (xPos > width - 10) {
+    xPos = 10;
   } else {
-    xpos += xstep;
+    xPos += xStep;
   }
 }
 ```
@@ -394,11 +392,11 @@ Note:
 - As is usually the case, you can do things in more than one way. The following was equally good.
 ```javaScript  
 function draw() {
-  line(xpos, ypos_top, xpos, ypos_bottom);
-  filter(BLUR, 0.8);
-  xpos += xstep;
-  if (xpos > width - 10) {
-    xpos = 10;
+  background(255, 175, 204);
+  line(xPos, yTop, xPos, yBottom);
+  xPos += xStep;
+  if (xPos > width - 10) {
+    xPos = 10;
   } 
 }
 ```
@@ -415,26 +413,22 @@ Then **else if** comes to the rescue.
 #### Lets try a more advanced conditional with 2 tests
 
 ```JavaScript
-// Draw a Random Shape
 let dice;
 let border = 10;
 
 function setup() {
-  createCanvas(300,300);
+  createCanvas(300, 300);
+  background(255, 175, 204);
   stroke(0);
-  background(255);
-  fill(0);
+  noFill();
   rectMode(CENTER);
   dice = random(1);
   if (dice < 0.333) {
-    // circle
-    ellipse(width / 2, height / 2, width - border, height - border);
+    ellipse(width / 2, height * 0.5, 200, 200);
   } else if ((dice > 0.333) && (dice < 0.666)) {
-    // rect
-    rect(width / 2, height / 2, width - border, height - border);
+    rect(width / 2, height / 2, 200, 200);
   } else {
-    // triangle
-    triangle(border / 2, 0 + border / 2, width - border / 2, height - border / 2, border / 2, height - border / 2);
+    triangle(width / 2, 50, width - 50, 250, 50, 250);
   }
 }
 ```
@@ -462,14 +456,13 @@ function setup() {
 }
 
 function draw() {
-  background(50);
-  stroke(255);
-  strokeWeight(8);
+  background(255, 175, 204);
+  fill(50, 128);
   ellipse(xpos, 200, diam, diam);
-  if (xpos > width-diam/2) {
+  if (xpos > width - diam / 2) {
     xspeed = -4;
   }
-  if (xpos < diam/2) {
+  if (xpos < diam / 2) {
     xspeed = 4;
   }
   xpos += xspeed;
@@ -482,7 +475,7 @@ function draw() {
 
 As you write more programs, you’ll notice that patterns occur when lines of code are repeated, but with slight variations. A code structure called **a loop** (or iteration loop) makes it possible to run a line of code more than once to condense this type of repetition into fewer lines. This makes your programs more modular and easier to change.
 
-```JavaScript
+```javaScript
 let number = 99;
 function draw() {
   while (number > 0) {
@@ -502,51 +495,51 @@ Note that if you don’t include the 'number--' line inside the loop, which subt
 
 #### Lets draw a line repeatedly as we did before.
 ```javaScript
-// a while loop example of our vertical lines
-let xpos = 80;
-let xstep = 20;
-let ypos_top = 20;
-let ypos_bottom = 180;
+let xPos = 100;
+let xStep = 25;
+let yTop = 20;
+let yBottom = 180;
 
 function setup() {
   createCanvas(400, 200);
-  background(255);
+  frameRate(10);
+  background(255, 175, 204);
 }
 
-function draw() {
-  while (xpos < width-80) {
-    line(xpos + (xstep * 0), ypos_top, xpos + (xstep * 0), ypos_bottom);
-    xpos += xstep;
-  } 
+function draw() { 
+  while (xPos < width-80) {
+      line(xPos, yTop, xPos, yBottom);
+    xPos += xStep;
+  }
 }
 ```
 
 And now try out adding the wind factor by displacing the top x coordinate!!
 
 ```javaScript
-let xpos = 80;
-let xstep = 25;
-let ypos_top = 20;
-let ypos_bottom = 180;
+let xPos = 100;
+let xStep = 25;
+let yTop = 20;
+let yBottom = 180;
 let wind = 5;
 
 function setup() {
   createCanvas(400, 200);
+  background(255, 175, 204);
 }
 
 function draw() {
-  background(255);
-  wind = 1 + mouseX/20;
-  while (xpos < width-80) {
-    line(xpos + (xstep * 0)+random(-wind,wind), ypos_top, xpos + (xstep * 0), ypos_bottom);
-    xpos += xstep;
-  } 
-  xpos = 80;
+  background(255, 175, 204);
+  while (xPos < width - 80) {
+    line(xPos + random(-wind, wind), yTop, xPos, yBottom);
+    xPos += xStep;
+  }
+  xPos = 80;
 }
 ```
 Note: 
-- background(255) needs to move from the setup function to draw.     
-- you need to reset the variable xpos to is base value at th end.
+- That background() needs to move from the setup function to draw to see only the last movement.  
+- you need to reset the variable xPos to is base value at the end.
 
 
 ## For Loop
@@ -563,65 +556,83 @@ The test statement is always **a relational expression** that compares two value
 The relational expression always evaluates to **true** or **false**. When it’s true, the code inside the block is run, when it’s false, the code inside the block is not run and the for loop ends.
 
 ```JavaScript
-let origx = 200;
-let origy = 100;
-let destx = 200;
-let desty = 300;
+let origx = 100;
+let origy = 200;
+let destx = 500;
+let desty = 200;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(600, 400);
   noLoop();
 }
 
 function draw() {
-  background(255);
+  background(255, 175, 204);
   fill(255);
-  strokeWeight(3);
+  strokeWeight(1);
   for (let i = 25; i < 400; i += 25) {
     stroke(50);
-    line(i, 200, origx, origy);
+    line(width / 2, i, origx, origy);
     stroke(240);
-    line(i, 200, destx, desty);
+    line(width / 2, i, destx, desty);
   }
 }
 ```
 
-The initial state of the for loop sets a variable h to 10. The code in the loop executes until h <= (height-15) (the end condition). Every time the loop is executed, the value of h increases by 10, according to the step you’ve defined (h += 10). This means the code inside the parentheses of the for loop will execute 28 times, with h set to 10, 20, 30 ... 270, 280. Knowing that the h variable follows this pattern, you can use it in multiple ways. The lines you’re drawing are in 10-pixel steps down the canvas, because you use h for the y value. But the alpha transparency of the lines also varies as h varies: the black line gets lighter, and the white line gets darker.
+The initial state of the for loop sets a variable i to 25. The code in the loop executes until i <  400 (the height) (the end condition). Every time the loop is executed, the value of i increases by 25, according to the step you’ve defined (i += 25). This means the code inside the parentheses of the for loop will execute 15 times ((400-25/25), with i set to 25, 50, 75 ... 375. Knowing that the i variable follows this pattern, you can use it in multiple ways. 
 
-#### Time for Serious Tiling.
+#### Time for Serious Tiling. A nested for loop
 ```JavaScript
-// a line of circles
-let diam = 30;
-let step = 15;
+let origx = 200;
+let origy = 200;
+let destx = 400;
+let desty = 200;
 
 function setup() {
-  createCanvas(510, 200);
-  background(255, 204, 0);
-  noFill();
+  createCanvas(600, 400);
+  noLoop();
 }
 
 function draw() {
-  for (var x = diam/2; x <= width - diam/2; x += step) {
-    ellipse(x, height / 2, diam, diam);
+  background(255, 175, 204);
+  fill(255);
+  strokeWeight(1);
+  for (let i = 25; i < 600; i += 25) {
+    for (let j = 25; j < 400; j += 25) {
+      stroke(50);
+      line(i, j, origx, origy);
+      stroke(240);
+      line(i, j, destx, desty);
+    }
   }
 }
 ```
-
+#### Time for Serious Tiling. A nested for loop with mouseinteraction
 ```JavaScript
-// 2 nested for loops forming a grid of circles
-let diam = 30;
-let step = 15;
+let origx = 200;
+let origy = 200;
+let destx = 400;
+let desty = 200;
 
 function setup() {
-  createCanvas(510, 210);
-  background(255, 204, 0);
-  noFill();
+  createCanvas(600, 400);
+  //noLoop();
 }
 
 function draw() {
-  for (let x = diam/2; x <= width - diam/2; x += step) {
-    for (let y = diam/2; y <= height - diam/2; y += step) {
-      ellipse(x, y, diam, diam);
+  background(255, 175, 204);
+  fill(255);
+  strokeWeight(1);
+  origx = mouseX;
+  origy = mouseY;
+  destx = width - mouseX;
+  desty = height - mouseY;
+  for (let i = 25; i < 600; i += 25) {
+    for (let j = 25; j < 400; j += 25) {
+      stroke(50);
+      line(i, j, origx, origy);
+      stroke(240);
+      line(i, j, destx, desty);
     }
   }
 }

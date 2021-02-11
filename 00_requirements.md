@@ -26,7 +26,6 @@ However, it is important that you type (and not copy - paste) the code examples 
 - [Generative Design / Gestaltung](http://www.generative-gestaltung.de/2/) Book & website on generative art & design
 - [LIA](http://www.liaworks.com/), pioneer of software and net art (active since 1995)
 - [Hamid Naderi Yeganeh](https://about.me/naderiyeganeh), an Iranian mathematical artist and digital artist
-- https://36xp5.site/
   
 ## Additional Learning resources:  
 - Check out the [learn page](https://p5js.org/learn/) & the [reference](https://p5js.org/reference/) on the p5.js website for full documentation.

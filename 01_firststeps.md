@@ -56,12 +56,11 @@ function setup() {
 
 function draw() {
   background(220);
-  ellipse(199, 199, 60, 60);
+  ellipse(200, 200, 60, 60);
 }
 ```
-Congratulations! You’ve made a simple computer program.
-
-So what’s going on here? You made a computer program, but what exactly happened?
+Congratulations! You’ve made a simple computer program.    
+But what exactly happened?
 
 `ellipse(199, 199, 60, 60);` is an example of **a function call**     
 `background(220);` and `createCanvas(400, 400);` are two other functions. We will learn about them in some minutes.
@@ -73,12 +72,13 @@ Functions are always followed by a pair of parentheses with inside them a value 
 Every function uses its parameters in a slightly different way, and part of learning a function is learning what its parameters mean.
 
 In the case of ellipse:
-- the first parameter is the X coordinate of the center of the ellipse 
-- the second parameter is the Y coordinate
+- the first parameter is the X coordinate (on the horizontal axis) of the center of the ellipse 
+- the second parameter is the Y coordinate (on the vertical axis)
 - the third parameter is the width of the ellipse
 - and the last parameter is the height of the ellipse
 
-**A function call ends with the semicolon (;)**. 
+**A function call ends with the semicolon (;)**.    
+The above is actually not true but, believe me, you better make a habit to do so. If you are nevertheless interested in conflicting opinions have a read [here](https://codeburst.io/why-i-prefer-to-use-semicolon-in-javascript-f00c303547).  
 
 You can put as many function calls as you want in between the line that reads function draw() { and the } that follows it.    
 
@@ -96,8 +96,8 @@ function setup() {
 
 function draw() {
   background(220);
-  ellipse(199, 199, 60, 60);
-  rect(199, 199, 60, 60);
+  ellipse(200, 200, 60, 60);
+  rect(200, 200, 60, 60);
 }
 ```
 
@@ -123,8 +123,8 @@ function setup() {
 
 function draw() {
   background(255, 175, 204);
-  ellipse(199, 199, 60, 60);
-  rect(199, 199, 60, 60);
+  ellipse(200, 200, 60, 60);
+  rect(200, 200, 60, 60);
 }
 ```
 ## Coordinates
@@ -154,8 +154,8 @@ function setup() {
 function draw() {
   background(255, 175, 204);
   fill(255);
-  ellipse(199, 199, 60, 60);
-  rect(199, 199, 60, 60);
+  ellipse(200, 200, 60, 60);
+  rect(200, 200, 60, 60);
 }
 ```
 Ignore `fill();` we’ll discuss it just below.
@@ -172,8 +172,8 @@ function setup() {
 function draw() {
   background(255, 175, 204);
   fill(255);
-  ellipse(180, 199, 200, 200);
-  rect(320, 99, 200, 200);
+  ellipse(180, 200, 200, 200);
+  rect(320, 100, 200, 200);
 }
 ```
 
@@ -191,8 +191,8 @@ function setup() {
 function draw() {
   background(255, 175, 204);
   fill(162, 210, 255);
-  ellipse(180, 199, 200, 200);
-  rect(320, 99, 200, 200);
+  ellipse(180, 200, 200, 200);
+  rect(320, 100, 200, 200);
 }
 ```
 
@@ -206,9 +206,9 @@ function setup() {
 function draw() {
   background(255, 175, 204);
   fill(162, 210, 255);
-  ellipse(180, 199, 200, 200);
+  ellipse(180, 200, 200, 200);
   fill(205, 180, 219);
-  rect(320, 99, 200, 200);
+  rect(320, 100, 200, 200);
 }
 ```
 You can change the color of the outline of the shapes using the `stroke()` command. Again, just with one parameter for greyscale or three for RGB values.
@@ -221,9 +221,9 @@ function setup() {
 function draw() {
   background(255, 175, 204);
   stroke(162, 210, 255);
-  ellipse(180, 199, 200, 200);
+  ellipse(180, 200, 200, 200);
   stroke(205, 180, 219);
-  rect(320, 99, 200, 200);
+  rect(320, 100, 200, 200);
 }
 ```
 
@@ -238,9 +238,9 @@ function draw() {
   background(255, 175, 204);
   strokeWeight(20);
   stroke(162, 210, 255);
-  ellipse(180, 199, 200, 200);
+  ellipse(180, 200, 200, 200);
   stroke(205, 180, 219);
-  rect(320, 99, 200, 200);
+  rect(320, 100, 200, 200);
 }
 ```
 If you don't want to apply a stroke of fill you can specify this with the functions `noStroke()` and `noFill()`.
@@ -255,10 +255,10 @@ function draw() {
   noFill();
   strokeWeight(20);
   stroke(162, 210, 255);
-  ellipse(180, 199, 200, 200);
+  ellipse(180, 200, 200, 200);
   fill(205, 180, 219);
   noStroke();
-  rect(320, 99, 200, 200);
+  rect(320, 100, 200, 200);
 }
 ```
 
@@ -299,11 +299,11 @@ Let try this! Copy the following code.
 ```JavaScript
 function setup() {
   createCanvas(400, 400);
-  background(0);
+  background(255, 175, 204);
 }
 
 function draw() {
-  fill(255, 0, 255);
+  fill(50, 128);
   noStroke();
   ellipse(mouseX,mouseY,30,30)
   if (mouseIsPressed) {
@@ -311,13 +311,13 @@ function draw() {
   }
 }
 ```
-The program creates a canvas and starts drawing pink circles at the position of the mouse. When a mouse button is pressed the canvas is erased and you can start allover.
+The program creates a canvas and starts drawing gray semi-transparent circles at the position of the mouse. When a mouse button is pressed the canvas is erased and you can start allover.
 
 More information about the mouseX, mouseY and the if-block will follow in the second part of this tutorial. But it is no rocket-science to understand their function in the program. 
 
 Notice also that the background function has moved to the setup function. Can you guess what would happen if it is called from within the draw() function?
 
-Additionally you can set the speed with which draw() is called by using the `frameRate()` function. If you give it a number (12, 24, 25, and 30 are typical), it will attempt to maintain that rate, calling draw() regularly. The default frame rate is based on the frame rate of the display (here also called "refresh rate"), which is set to 60 frames per second on most computers.
+Additionally you can set the speed with which draw() is called by using the [`frameRate()`](https://p5js.org/reference/#/p5/frameRate) function. If you give it a number (12, 24, 25, and 30 are typical), it will attempt to maintain that rate, calling draw() regularly. The default frame rate is based on the frame rate of the display (here also called "refresh rate"), which is set to 60 frames per second on most computers.
 
 There are two other function blocks that I'll mention now but come back to later: 
 `mousePressed()`& `preload()`.
@@ -378,5 +378,3 @@ The text between the quotes ("mouseX: ") is there to dissociate and clarify the 
 Try to replicate the shapes below with code. These functions might help you to start: background() circle() fill() stroke() strokeWeight() line() rect(). For more information, have a look at [the official documentation](https://p5js.org/reference/).
 
 ![](img/p5js_ex1.png)
-
-If this was a cup of tea you can built your own 

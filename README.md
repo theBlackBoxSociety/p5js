@@ -14,7 +14,7 @@ During the summer of 2014, [Lauren McCarthy](http://lauren-mccarthy.com/) and a 
 ### [Foundation](02_basics.md) • the most commonly used functions and functionalities
 ### [Employment](03_employment.md) • time for some more instantly practical knowledge
 ### [Advanced](04_advanced.md) • a step up the learning curve 
-### [bits&bobs](05_bits&bobs.md) • a collection of useful bits and bobs
+### [Bits&Bobs](05_bits&bobs.md) • a collection of useful bits and bobs
 
 
 ## To Do Before Class
