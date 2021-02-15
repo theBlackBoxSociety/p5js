@@ -325,7 +325,7 @@ function draw() {
 }
 
 ```
-Note: The sketch is using 3 new items: the [`colorMode()`](https://p5js.org/reference/#/p5/colorMode)` function, the [frameCount](https://p5js.org/reference/#/p5/frameCount) system variable and % (modulo) operator.    
+Note: The sketch is using 3 new items: the [`colorMode()`](https://p5js.org/reference/#/p5/colorMode) function, the [frameCount](https://p5js.org/reference/#/p5/frameCount) system variable and % (modulo) operator.    
 The first two can be found in the reference, below more about the modulo operator.
 
 **%** or **modulo** calculates the remainder when one number is divided by another. For example, when 52 is divided by 10, the divisor (10) goes into the dividend (52) five times (5 * 10 == 50), and there is a remainder of 2 (52 - 50 == 2). Thus, 52 % 10 produces 2.
