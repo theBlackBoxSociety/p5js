@@ -7,8 +7,12 @@
 - Objects [OK]
 - Buttons & sliders 🚧
 - Dom manipulation 🚧
-- from j5js to web dev
-
+- from p5js to web dev
+- external libraries 
+	- p5.play
+	- https://github.com/zenozeng/p5.js-svg
+	- https://idmnyu.github.io/p5.js-speech/
+	- rita
 </details>
 
 # P5.JS • Advanced

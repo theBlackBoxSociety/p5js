@@ -134,7 +134,7 @@ bezier(x1, y1, x2, y2, x3, y3, x4, y4)
 x1 & y1 coordinates for first anchor point    
 x2 & y2 coordinates for first control point    
 x3 & y3 coordinates for second control point    
-x4 & y4 coordinates for second anchor point
+x4 & y4 coordinates for second anchor point     
 See [this bezier curve demo](https://editor.p5js.org/allison.parrish/sketches/H1QQ3Nt67)
 
 This second example goes a step further and only responds when the up and down arrows are pressed.

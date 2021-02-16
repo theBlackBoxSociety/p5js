@@ -1,11 +1,7 @@
 <details>
 <summary>Table of Contents - click to expand!</summary>
 
-- external libraries 
-	- p5.play
-	- https://github.com/zenozeng/p5.js-svg
-	- https://idmnyu.github.io/p5.js-speech/
-	- rita
+
 - resize window
 - fullscreen
 - export png, svg & video
@@ -22,8 +18,6 @@
 
 🚧 🚧 🚧 🚧 🚧 NOT FINISHED YET 🚧 🚧 🚧 🚧 🚧
 
-
-## 
 ## windowResized()
 The windowResized() function in p5.js is called once every time the browser window is resized. It adjusts it height and width automatically whenever the size of the window is increased. This function is invoked automatically as soon as window is resized and then create a new canvas corresponding to it.
 
@@ -42,6 +36,7 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
 ```
+
 ## fullscreen()
 The `fullscreen()` function sets the sketch to fullscreen or not based on the value of the argument. If no argument is given, returns the current fullscreen state. Note that due to browser restrictions this can only be called on user input, for example, on mouse press like the example below.
 
@@ -67,6 +62,7 @@ function mousePressed() {
   }
 }
 ```
+
 ## export images, animations & movies
 ### export a bitmap image
 https://stubborncode.com/posts/how-to-export-images-and-animations-from-p5-js/
@@ -113,10 +109,9 @@ function keyTyped() {
 }
 ```
 
-### GIF
-saveFrames()
+### export a GIF
 Capture a sequence of frames that can be used to create a movie.
-Note that saveFrames() will only save the first 15 frames of an animation.
+Note that `saveFrames()` will only save the first 15 frames of an animation.
 
 ```javaScript
 let circleSize = 5;
@@ -155,11 +150,11 @@ https://editor.p5js.org/hendrikleper/sketches/vRCUbReWo
 from https://www.youtube.com/watch?v=nBKwCCtWlUg&ab_channel=TheCodingTrain
 https://ezgif.com/maker
 
-### movie
+### export movie
 https://editor.p5js.org/doriclaudino/sketches/LgLw5UaBr
 https://editor.p5js.org/hendrikleper/sketches/f6s4d-Yyf
 
-or maybe better do screen recording  
+or maybe better with screen recording
 
 ### svg
 https://zenozeng.github.io/p5.js-svg/examples/#exporting
