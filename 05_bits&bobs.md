@@ -7,10 +7,13 @@
 - export png, svg & video
 	- https://stubborncode.com/posts/how-to-export-images-and-animations-from-p5-js/
 	- https://editor.p5js.org/doriclaudino/sketches/LgLw5UaBr 
-	>> screenrecording is much easier
-- multiple sketches
-	http://joemckaystudio.com/multisketches/
+	>> screenrecording is much easier (with OSB)
+	- see also https://www.3and50.com/feed/p5-js-editor-to-webm-movie-with-ccapture-js?fbclid=IwAR0zKuu8sgiiGpd3S827cNq9kk34tfs1SAT6IfeHSwfqD_SoYk6ME7ZX06A
+	
 - Synthesizing and analyzing sound 🚧
+see also https://js6450.github.io/audio-viz/
+
+
 
 </details>
 
@@ -156,5 +159,5 @@ https://editor.p5js.org/hendrikleper/sketches/f6s4d-Yyf
 
 or maybe better with screen recording
 
-### svg
+### export svg
 https://zenozeng.github.io/p5.js-svg/examples/#exporting

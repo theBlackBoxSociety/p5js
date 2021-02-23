@@ -378,3 +378,23 @@ The text between the quotes ("mouseX: ") is there to dissociate and clarify the 
 Try to replicate the shapes below with code. These functions might help you to start: background() circle() fill() stroke() strokeWeight() line() rect(). For more information, have a look at [the official documentation](https://p5js.org/reference/).
 
 ![](img/p5js_ex1.png)
+
+## p5.js web editor keyboard shortcuts
+⌘ = OS X      
+for Windows and Linux ⌘ = ctrl      
+
+| shortcut | action |
+| :-: | --- |
+| ⌘ + S | Save |
+| ⌘ + Enter | Start Sketch |
+| ⌘ + ⇧ + Enter | Stop Sketch |
+| ⌘ + ⇧ + 1 | Turn On Accessible Output |
+| ⌘ + ⇧ + 2 | Turn Off Accessible Output |
+| ⇧ + | Tab Tidy |
+| ⌘ + F | Find Text |
+| ⌘ + G | Find Next Text Match |
+| ⌘ + ⇧ + G | Find Previous Text Match |
+| ⌘ + ⌥ + F | Replace Text Match |
+| ⌘ + [ | Indent Code Left |
+| ⌘ + ] | Indent Code Right |
+| ⌘ + / | Comment Line |
