@@ -1,24 +1,24 @@
 <details>
 <summary>Table of Contents - click to expand!</summary>
 
-- interaction
-	- mouseposition
-	- mouseclick
-	- key 
-  - keyIsPressed
-	- Event functions
-- Transformations
- !!!!!!!!!! https://genekogan.com/code/p5js-transformations/ !!!!!!
-  - translate
-  - rotate
-	- scale
-	- order matters
-  - push & pop
-- Media 🚧
-  - images (function preload!!)
-  - video (files & camera)
-  - sounds (extra library)
-- Text & type 🚧
+- [Interaction](#interaction)
+	- [Mouse position](#mouse-position)
+	- [Mouse clicks](#mouse-clicks)
+	- [Key](#key)
+	- [keyIsPressed](#keyispressed)
+	- [Event functions](#event-functions)
+- [Transformations](#transformations)
+	- [Translation](#translation)
+	- [Rotation](#rotation)
+	- [Scale](#scale)
+	- [Order Matters](#order-matters)
+	- [Push and Pop](#push-and-pop)
+- [Media](#media) 🚧
+	- [Images](#images)
+	- [SVG](#svg)
+	- [Video](#video)
+	- [Sound](#sound)
+- [Text & Type](#text-type) 🚧
 
 </details>
 
@@ -216,7 +216,8 @@ See also [this tutorial](https://www.openprocessing.org/sketch/944398) on the di
 
 ## Transformations
 <sup>based on https://processing.org/tutorials/transform2d/ <br>
-see also https://creative-coding.decontextualize.com/transformations-and-functions/</sup>
+see also https://creative-coding.decontextualize.com/transformations-and-functions/</sup><br>
+<sup>but also check https://genekogan.com/code/p5js-transformations/ !!!!!!</sup>
 
 Transformations are handy and elegant techniques for changing where and how shapes get drawn to the screen. This tutorial will introduce you to the translate, rotate, and scale functions.
 
@@ -563,16 +564,14 @@ function setup() {
 ### SVG
 https://makeyourownalgorithmicart.blogspot.com/2018/03/creating-svg-with-p5js.html
 
-
-
 samples
 see https://editor.p5js.org/PaulGSA/sketches/ZqjKCmILU
 https://editor.p5js.org/PaulGSA/sketches/-iEVohzim
 
+### Video
+https://creative-coding.decontextualize.com/video/
+
+### Sound
 
 ## Text & Type
 see https://creative-coding.decontextualize.com/text-and-type/
-
-
-### video
-https://creative-coding.decontextualize.com/video/

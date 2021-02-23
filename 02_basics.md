@@ -17,9 +17,9 @@
 
 </details>
 
-# P5.JS • Foundation: expressions, variables,  conditionals, loops, ...
+# P5.JS • Foundation: Expressions, Variables, Conditionals, Loops, Functions, Arrays and Objects.
 
-In the previous tutorial, we went through the basics of working with p5.js. This tutorial goes over a couple of fundamental concepts of computer programming with expressions (or math), variables, conditionals and loops. We will apply these concepts in working with motion.     
+In the previous tutorial, we went through the basics of working with p5.js. This tutorial goes over a solid number of fundamental concepts of computer programming with expressions (or math), variables, conditionals, loops, functions, arrays and objects. We will apply these concepts in working with random numbers, motion and recursion.     
 But we will start with something that is pointless for the machine but, in time, will certainly prove its value to yourself and potential co-coders, *comments*.
 
 ## Comments
@@ -187,7 +187,7 @@ note:
 - `let x, y;` is a shorthand notation for     
 `let x;     
 let y;` 
-- The filter BLUR executes a Gaussian blur, the parameter 1 specifies the intensity of the filter. 
+- The filter BLUR executes a Gaussian blur, the parameter 1 specifies the intensity of the filter. You might have seen the framerate drop to 5 frames/sec or so. This is a CPU intensive operation. Try `background(0, 5);` at the top of the draw loop instead. 
 
 #### back to our 9 lines in the wind
 ```JavaScript
@@ -452,27 +452,24 @@ Draw an ellipse that moves from left to right. When it reaches the right hand si
 
 ```javaScript
 let xspeed = 4;
-let xpos = 0;
-let diam = 50;
+let xpos;
+let diam = 30;
 
 function setup() {
   createCanvas(400, 400);
+  xpos = diam;
 }
 
 function draw() {
   background(255, 175, 204);
   fill(50, 128);
   ellipse(xpos, 200, diam, diam);
-  if (xpos > width - diam / 2) {
-    xspeed = -4;
-  }
-  if (xpos < diam / 2) {
-    xspeed = 4;
+  if ((xpos > width - diam / 2) || (xpos < diam / 2)) {
+    xspeed = xspeed * -1;
   }
   xpos += xspeed;
 }
 ```
-
 
 
 ## While Loop 
@@ -510,9 +507,9 @@ function setup() {
   background(255, 175, 204);
 }
 
-function draw() { 
-  while (xPos < width-80) {
-      line(xPos, yTop, xPos, yBottom);
+function draw() {
+  while (xPos < width - 80) {
+    line(xPos, yTop, xPos, yBottom);
     xPos += xStep;
   }
 }
@@ -585,16 +582,16 @@ function draw() {
 
 The initial state of the for loop sets a variable i to 25. The code in the loop executes until i <  400 (the height) (the end condition). Every time the loop is executed, the value of i increases by 25, according to the step you’ve defined (i += 25). This means the code inside the parentheses of the for loop will execute 15 times ((400-25/25), with i set to 25, 50, 75 ... 375. Knowing that the i variable follows this pattern, you can use it in multiple ways. 
 
-#### Time for Serious Tiling. A nested for loop
-```JavaScript
-let origx = 200;
-let origy = 200;
-let destx = 400;
-let desty = 200;
+
+### Nested for loops
+When one for loop is embedded inside another, the number of repetitions is multiplied. The example below does this to draw a grid of points.
+
+```javaScript
+let count = 0;
 
 function setup() {
   createCanvas(600, 400);
-  noLoop();
+  stroke(50);
 }
 
 function draw() {
@@ -602,16 +599,18 @@ function draw() {
   fill(255);
   strokeWeight(1);
   for (let i = 25; i < 600; i += 25) {
-    for (let j = 25; j < 400; j += 25) {
-      stroke(50);
-      line(i, j, origx, origy);
-      stroke(240);
-      line(i, j, destx, desty);
+    for (let j = 25; j < 400; j += 25) {      
+      point(i, j);
+      text(count, i, j);
+      count ++;
     }
   }
 }
 ```
-#### Time for Serious Tiling. A nested for loop with mouseinteraction
+Notice that we draw in columns. So first the most internal for loop iterates and draws a vertical line of points on the far left, then we move one step to the right with the outer for loop, draw the next column of points and so on. 
+
+A next similar example with dynamic lines reacting on the mouse position. 
+
 ```JavaScript
 let origx = 200;
 let origy = 200;
@@ -641,9 +640,10 @@ function draw() {
   }
 }
 ```
-#### the GOTO 10 example
+### GOTO 10
 "goto 10" refers to "10 PRINT CHR$(205.5+RND(1)); : GOTO 10"      
 a random maze generation program in one line of Commodore 64 Basic.
+Check [this book](the phenomenon of creative computing and the way computer programs exist in culture.) on the origin of the computer code and the phenomenon of creative computing and the way computer programs exist in culture. 
 
 ```JavaScript
 // GOTO 10 or Random Diagonal Lines in a grid
@@ -777,11 +777,7 @@ function draw() {
 }
 ```
 
-nesting for loops
-
-When one for loop is embedded inside another, the number of repetitions is multiplied. For each line in y-direction (y < height) the code iterates through every pixel in x-direction (x < width) and draws a point at the respective location with a red and green color value corresponding to x and y.
-
-### Our last sketch with color
+### with color
 ```JavaScript
 // Draw a Full Grid of Random Shape 
 // Triangles can be orientated in 4 directions
@@ -852,10 +848,10 @@ function name_of_function() {
 ```
 ... where you need to replace `name_of_function` with the name that you want to give the function, and `statements` with whatever code you want to be in the function: this can be function calls, `for loops`, `if statements`, etc.
 
-In addition, we can assign one or more arguments and include them in the function description. 
+In addition, we can assign one or more parameters and include them in the function description. 
 
 ```javaScript
-function name_of_function(argument1, argument2) {
+function name_of_function(parameter1, parameter2) {
   statements
 }
 ```
@@ -871,7 +867,7 @@ function drawRedCircle(circleX, circleY, circleDiameter) {
 ```
 
 To call this function, we’d just use its name and give it parameters, exactly like we’ve been calling preexisting functions.     
-We can call the function just once or, of course, several times (with custom arguments).
+We can call the function just once or, of course, several times (with custom parameters).
 ```javaScript
 drawRedCircle(100,100,50);
 drawRedCircle(200,200,50);
@@ -894,7 +890,7 @@ function smiley(x, y, s) {
 
 function setup() {
   createCanvas(520, 400);
-  background(255);
+  background(255, 175, 204);
   for (let x = 20; x < width; x += 40) {
     for (let y = 20; y < height; y += 40) {
       smiley(x, y, 40);
@@ -925,7 +921,7 @@ function drawCircle(x, y, radius) {
 
 function setup() {
   createCanvas(600, 500);
-  background(255);
+  background(255, 175, 204);
   noFill();
   drawCircle(width / 2, height / 2, width * 0.75);
 }
@@ -933,7 +929,7 @@ function setup() {
 
 
 ```javaScript
-// this recursion function takes 3 arguments: location (x,y) and size (s)
+// this recursion function takes 3 parameters: location (x,y) and size (s)
 function recursion(x, y, s) {
   // The test: ensure that size s is greater than zero
   if (s > 3) {
@@ -1086,13 +1082,14 @@ let circleY = [25, 50, 75, 100, 125, 150, 175, 200, 225, 250, 275];
 function setup() {
   createCanvas(500, 300);
   noStroke();
+  fill(50);
 }
 
 function draw() {
-  background(50);
+  background(255, 175, 204);
   for (let i = 0; i < circleY.length; i++) {
     let circleX = 50 * i;
-    circle(circleX, circleY[i], 5);
+    circle(circleX, circleY[i], 10);
     circleY[i]++;
     if (circleY[i] > height) {
       circleY[i] = 0;
@@ -1112,13 +1109,14 @@ let numCircles = 50;
 function setup() {
   createCanvas(500, 300);
   noStroke();
+  fill(50);
   for (let i = 0; i < numCircles; i++) {
     circleY[i] = random(height);
   }
 }
 
 function draw() {
-  background(50);
+  background(255, 175, 204);
   for (let i = 0; i < circleY.length; i++) {
     let circleX = width * i / circleY.length;
     circle(circleX, circleY[i], 5);
@@ -1140,10 +1138,11 @@ let circleX = [];
 function setup() {
   createCanvas(500, 300);
   noStroke();
+  fill(50);
 }
 
 function draw() {
-  background(50);
+  background(255, 175, 204);
   noStroke();
   for (let i = 0; i < circleY.length; i++) {
     circle(circleX[i], circleY[i], 25);
@@ -1163,7 +1162,7 @@ Notice that we also needed a second array to store the X coordinates.
 We can also remove elements from an array. Use `.pop()` to remove the last element and `.shift()` to remove the first element.
 
 ## Objects
-<sup>based on https://gokcetaskan.com/artofcode/classes</sup>
+<sup>based on [this tutorial](https://gokcetaskan.com/artofcode/classes) by Gokce Taskan</sup>
 
 Classes in javascript are objects (as with everything else). I will use the word "class" to be more faithful to the general programming concepts, but you might find the two terms used interchangeably (and wrongly) across the web when people talk about javascript.
 
@@ -1215,7 +1214,7 @@ function setup() {
 }
 
 function draw() {
-  background(255);
+  background(255, 175, 204);
   for (let i = 0; i < balls.length; i++) {
     balls[i].show();
     // This show function doesn't exist in the class
@@ -1244,6 +1243,8 @@ class Ball {
   }
   show() {
     // Draw the circle
+    fill(50);
+    noStroke();
     circle(this.x, this.y, this.size);
     // Move the circle
     this.move();
@@ -1272,6 +1273,8 @@ class Ball {
   }
   show() {
     // Draw the circle
+    fill(50);
+    noStroke();
     circle(this.x, this.y, this.size);
     // Move the circle
     this.move();
@@ -1299,6 +1302,6 @@ You can add more functionality by adding different behaviours, functions to the 
 
 Classes help us separate repeated logic. The amazing thing is that if you write your classes in a clean, structured, and isolated way, you can re-use them in your future sketches.
 
-see examples: 
-https://editor.p5js.org/hendrikleper/sketches/NkM2fkWUS
-https://editor.p5js.org/hendrikleper/sketches/MwIclRSzc
+see these examples: 
+- [Animated Fractal Array](https://editor.p5js.org/hendrikleper/sketches/MwIclRSzc)
+- [flowField with Agents](https://editor.p5js.org/hendrikleper/sketches/UwiUx4XwZ)
