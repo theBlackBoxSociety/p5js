@@ -10,11 +10,6 @@
 	>> screenrecording is much easier (with OSB)
 	- see also https://www.3and50.com/feed/p5-js-editor-to-webm-movie-with-ccapture-js?fbclid=IwAR0zKuu8sgiiGpd3S827cNq9kk34tfs1SAT6IfeHSwfqD_SoYk6ME7ZX06A
 	
-- Synthesizing and analyzing sound 🚧
-see also https://js6450.github.io/audio-viz/
-
-
-
 </details>
 
 # P5.JS • Bits & Bobs

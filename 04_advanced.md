@@ -12,7 +12,9 @@
 	- https://idmnyu.github.io/p5.js-speech/
 	- rita
 - WEBGL 🚧	
-	
+- Synthesizing and analyzing sound 🚧
+see also https://js6450.github.io/audio-viz/
+
 </details>
 
 # P5.JS • Advanced
@@ -173,5 +175,8 @@ function draw() {
 }
 ```
 
-## Shaders
+### Shaders
 https://itp-xstory.github.io/p5js-shaders/#/
+
+## Synthesizing and analyzing sound 🚧
+see also https://js6450.github.io/audio-viz/

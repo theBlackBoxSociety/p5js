@@ -645,8 +645,8 @@ function draw() {
 a random maze generation program in one line of Commodore 64 Basic.
 Check [this book](the phenomenon of creative computing and the way computer programs exist in culture.) on the origin of the computer code and the phenomenon of creative computing and the way computer programs exist in culture. 
 
+#### GOTO 10 or Random Diagonal Lines in a grid
 ```JavaScript
-// GOTO 10 or Random Diagonal Lines in a grid
 let dice = 0;
 let tile = 20;
 
@@ -670,33 +670,12 @@ function draw() {
   }
 }
 ```
-```javaScript
-// GOTO 10 the Horizontal / Vertical approach
-let dice = 0;
-let tile = 20;
 
-function setup() {
-  createCanvas(600, 600);
-  background(255);
-  stroke(0);
-  noLoop();
-}
+#### GOTO 10 the Horizontal / Vertical approach
+https://editor.p5js.org/hendrikleper/sketches/gPAhEwMab
 
-function draw() {
-  for (let x = tile / 2; x <= width; x += tile) {
-    for (let y = tile / 2; y <= height; y += tile) {
-      dice = random(1);
-      if (dice <= 0.5) {
-        line(x, y - tile / 2, x, y + tile / 2);
-      } else {
-        line(x - tile / 2, y, x + tile / 2, y);
-      }
-    }
-  }
-}
-```
+#### Random Shapes in a 10 by 10 grid
 ```JavaScript
-// Draw Random Shapes in a 10 by 10 grid
 let dice = 0;
 let tile = 30;
 let gutter = 3;
@@ -723,116 +702,13 @@ function draw() {
   }
 }
 ```
-```JavaScript
-// Draw a Full Grid of Random Shape 
-// Triangles can be orientated in 4 directions
-let dice = 0;
-let dice2 = 0;
-let tile = 100;
-let border = tile / 10;
 
-function setup() {
-  createCanvas(300, 300);
-  background(255);
-  fill(0);
-  noStroke();
-  rectMode(CENTER);
-  noLoop();
-}
+#### Draw a Full Grid of Random Shapes 
+Triangles can be orientated in 4 directions
+https://editor.p5js.org/hendrikleper/sketches/zymfmIoeI
 
-function draw() {
-  for (let x = tile / 2; x <= width; x += tile) {
-    for (let y = tile / 2; y <= height; y += tile) {
-      dice = random(1);
-      dice2 = random(1);
-      if (dice <= 0.333) {
-        // circle
-        console.log("circle");
-        ellipse(x, y, tile - border, tile - border);
-      } else if ((dice > 0.333) && (dice < 0.666)) {
-        // rect
-        console.log("square");
-        rect(x, y, tile - border, tile - border);
-      } else {
-        if (dice2 <= 0.25) {
-          // triangle 1
-          console.log("triangle 1");
-          triangle(x - tile / 2 + border / 2, y - tile / 2 + border / 2, x + tile / 2 - border / 2, y + tile / 2 - border / 2, x - tile / 2 + border / 2, y + tile / 2 - border / 2);
-        } else if ((dice2 > 0.25) && (dice2 <= 0.5)) {
-          // triangle 2
-          console.log("triangle 2");
-          triangle(x - tile / 2 + border / 2, y - tile / 2 + border / 2, x + tile / 2 - border / 2, y - tile / 2 + border / 2, x + tile / 2 - border / 2, y + tile / 2 - border / 2);
-        } else if ((dice2 > 0.5) && (dice2 <= 0.75)) {
-          // triangle 3
-          console.log("triangle 3");
-          triangle(x - tile / 2 + border / 2, y - tile / 2 + border / 2, x + tile / 2 - border / 2, y - tile / 2 + border / 2, x - tile / 2 + border / 2, y + tile / 2 - border / 2);
-        } else {
-          // triangle 4
-          console.log("triangle 4");
-          triangle(x + tile / 2 - border / 2, y - tile / 2 + border / 2, x + tile / 2 - border / 2, y + tile / 2 - border / 2, x - tile / 2 + border / 2, y + tile / 2 - border / 2);
-        }
-      }
-    }
-  }
-}
-```
-
-### with color
-```JavaScript
-// Draw a Full Grid of Random Shape 
-// Triangles can be orientated in 4 directions
-// With colors this time
-let dice = 0;
-let dice2 = 0;
-let tile = 100;
-let border = tile / 10;
-
-function setup() {
-  createCanvas(300, 300);
-  background(255);
-  fill(0);
-  noStroke();
-  rectMode(CENTER);
-  noLoop();
-}
-
-function draw() {
-  for (let x = tile / 2; x <= width; x += tile) {
-    for (let y = tile / 2; y <= height; y += tile) {
-      dice = random(1);
-      dice2 = random(1);
-      fill(100*dice+155,dice2*255,100); 
-      if (dice <= 0.333) {
-        // circle
-        console.log("circle");
-        ellipse(x, y, tile - border, tile - border);
-      } else if ((dice > 0.333) && (dice < 0.666)) {
-        // rect
-        console.log("square");
-        rect(x, y, tile - border, tile - border);
-      } else {
-        if (dice2 <= 0.25) {
-          // triangle 1
-          console.log("triangle 1");
-          triangle(x - tile / 2 + border / 2, y - tile / 2 + border / 2, x + tile / 2 - border / 2, y + tile / 2 - border / 2, x - tile / 2 + border / 2, y + tile / 2 - border / 2);
-        } else if ((dice2 > 0.25) && (dice2 <= 0.5)) {
-          // triangle 2
-          console.log("triangle 2");
-          triangle(x - tile / 2 + border / 2, y - tile / 2 + border / 2, x + tile / 2 - border / 2, y - tile / 2 + border / 2, x + tile / 2 - border / 2, y + tile / 2 - border / 2);
-        } else if ((dice2 > 0.5) && (dice2 <= 0.75)) {
-          // triangle 3
-          console.log("triangle 3");
-          triangle(x - tile / 2 + border / 2, y - tile / 2 + border / 2, x + tile / 2 - border / 2, y - tile / 2 + border / 2, x - tile / 2 + border / 2, y + tile / 2 - border / 2);
-        } else {
-          // triangle 4
-          console.log("triangle 4");
-          triangle(x + tile / 2 - border / 2, y - tile / 2 + border / 2, x + tile / 2 - border / 2, y + tile / 2 - border / 2, x - tile / 2 + border / 2, y + tile / 2 - border / 2);
-        }
-      }
-    }
-  }
-}
-```
+#### Draw a Full Grid of Random Shapes with Color
+https://editor.p5js.org/hendrikleper/sketches/sU7hKZaN7e
 
 ## Functions
 
@@ -1161,20 +1037,18 @@ Notice that we also needed a second array to store the X coordinates.
 ### Remove an element
 We can also remove elements from an array. Use `.pop()` to remove the last element and `.shift()` to remove the first element.
 
-## Objects
-<sup>based on [this tutorial](https://gokcetaskan.com/artofcode/classes) by Gokce Taskan</sup>
+## Objects 🚧🚧
+<sup>based on [this tutorial](https://gokcetaskan.com/artofcode/classes) by Gokce Taskan but adapted towards </sup>
 
-Classes in javascript are objects (as with everything else). I will use the word "class" to be more faithful to the general programming concepts, but you might find the two terms used interchangeably (and wrongly) across the web when people talk about javascript.
 
 A simple example of a class:
 ```javaScript
-// Define a class named Area
-class Area {
-  constructor(w, h) {
-    this.w = w;
-    this.h = h;
-  }
-  calculateSurface() {
+// Define an Object named Area
+function Area(w, h) {
+  this.w = w;
+  this.h = h;
+
+  this.calculateSurface = function() {
     return this.w * this.h;
   }
 }
@@ -1187,17 +1061,15 @@ let rect = new Area(3, 4);
 let surface = rect.calculateSurface();
 
 // Prints 12
-print(surface);
+console.log(surface);
 ```
 Now, let's create something more useful in p5.js. Imagine that we want to have some balls that bounce from the edges of the screen. If we were to write this without a class, we would have to keep track of each ball's position in global arrays, which might get complicated quite quickly.
 
 Additionally, if we wanted to add more functionality like changing color when they bounce, or something else, it'll further complicate our code.
 ```javaScript
-class Ball {
-  constructor(x, y) {
+function Ball(x,y) {
     this.x = x;
     this.y = y;
-  }
 }
 
 let ballCount = 20;
@@ -1233,15 +1105,14 @@ Following is what we have so far. 20 balls randomly placed on the canvas:
 
 Then, let's move them:
 ```javaScript
-class Ball {
-  constructor(x, y) {
+function Ball(x,y) {
     this.x = x;
     this.y = y;
     this.size = 10;
     this.speedx = 1;
     this.speedy = 1;
-  }
-  show() {
+  
+  this.show = function() {
     // Draw the circle
     fill(50);
     noStroke();
@@ -1249,7 +1120,7 @@ class Ball {
     // Move the circle
     this.move();
   }
-  move() {
+  this.move = function() {
     this.x += this.speedx;
     this.y += this.speedy;
   }
@@ -1263,15 +1134,14 @@ Hit play to see them move.
 
 Finally, let's make them bounce from edges of the canvas:
 ```javaScript
-class Ball {
-  constructor(x, y) {
+function Ball(x, y) {
     this.x = x;
     this.y = y;
     this.size = 10;
     this.speedx = 1;
     this.speedy = 1;
-  }
-  show() {
+  
+  this.show = function() {
     // Draw the circle
     fill(50);
     noStroke();
@@ -1281,11 +1151,11 @@ class Ball {
     // Bounce from the edges
     this.bounce();
   }
-  move() {
+  this.move = function() {
     this.x += this.speedx;
     this.y += this.speedy;
   }
-  bounce() {
+  this.bounce = function() {
     // Check if current x position is higher than width OR smaller than 0
     // if true, then reverse the x speed
     if (this.x > width || this.x < 0) {
