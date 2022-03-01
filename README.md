@@ -15,7 +15,7 @@ During the summer of 2014, [Lauren McCarthy](http://lauren-mccarthy.com/) and a 
 ### [Employment](03_employment.md) • time for some more instantly practical knowledge
 ### [Advanced](04_advanced.md) • a step up the learning curve
 ### [Bits&Bobs](05_bits&bobs.md) • useful bits and bobs
-### [Generative Art](06_generative.md) • a collection of historical examples of Generative Art
+### bonus: [Generative Art](06_generative.md) • a collection of historical examples of Generative Art
 
 
 ## To Do Before Class
