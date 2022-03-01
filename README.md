@@ -13,17 +13,18 @@ During the summer of 2014, [Lauren McCarthy](http://lauren-mccarthy.com/) and a 
 ### [Quickstart](01_firststeps.md) • getting our hands dirty
 ### [Foundation](02_basics.md) • the most commonly used functions and functionalities
 ### [Employment](03_employment.md) • time for some more instantly practical knowledge
-### [Advanced](04_advanced.md) • a step up the learning curve 
-### [Bits&Bobs](05_bits&bobs.md) • a collection of useful bits and bobs
+### [Advanced](04_advanced.md) • a step up the learning curve
+### [Bits&Bobs](05_bits&bobs.md) • useful bits and bobs
+### [Generative Art](06_generative.md) • a collection of historical examples of Generative Art
 
 
 ## To Do Before Class
 - Watch [this interactive video](http://hello.p5js.org/) from Lauren McCarthy and Daniel Shiffman
 - Read the [p5.js Community Statement](https://p5js.org/community/).
 - Sign up for an account on [the p5js web editor](https://editor.p5js.org/)
-- And optionally check some of the [p5.js examples](https://p5js.org/examples/) to get familiar with the possibilities 
+- And optionally check some of the [p5.js examples](https://p5js.org/examples/) to get familiar with the possibilities
 
-<hr> 
+<hr>
 <sup>For these notes, I have taken major and minor parts from other sources. These are: [Creative Coding
 by Allison Parrish](https://creative-coding.decontextualize.com/), [Getting Started with p5.js book, by Lauren McCarthy, Casey Reas & Ben Fry](https://www.oreilly.com/library/view/make-getting-started/9781457186769/), [Programming For Artists, An introduction to programming for artists by Brannon Dorsey](https://brannondorsey.github.io/ProgrammingForArtists/), [Introduction to p5.js by Johannes Preis](https://medium.com/comsystoreply/introduction-to-p5-js-9a7da09f20aa)
 & [the p5.js website](https://p5js.org/)</sup>
